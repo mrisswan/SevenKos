@@ -2,7 +2,6 @@
     <div class="container-fluid">
         <!-- Basic Examples -->
         <div class="col-lg-12">
-            <!-- <?= $this->pagination->create_links(); ?> -->
             <?php foreach ($sql as $kos) : ?>
                 <div class="col-md-6">
                     <div class="thumbnail">
@@ -31,14 +30,9 @@
                             <h4>Rp. <?= $this->cart->format_number($kos->harga); ?></h4>
                             </p>
                         </div>
-                        <?= $this->pagination->create_links(); ?>
                     </div>
                 </div>
             <?php endforeach ?>
-            <?= $this->pagination->create_links(); ?>
         </div>
-        <?= $this->pagination->create_links(); ?>
-        heloooooo
     </div>
-    <?= $this->pagination->create_links(); ?>
 </section>
