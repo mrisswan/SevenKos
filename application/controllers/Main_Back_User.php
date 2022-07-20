@@ -486,19 +486,19 @@ class Main_Back_User extends CI_Controller
 
 
 
-	public function semua_kos()
+	public function semua_kos($page = 1)
 	{
 		//config
 		// $config['base_url'] = 'http://localhost/BISABISABISA/';
 		$config['base_url'] = site_url('Main_Back_User/semua_kos');
 		$config['total_rows'] = $this->User_model->countAllkos();
 		$config['per_page'] = 3;
-		$config['uri_segment'] = 3;
+		// $config['uri_segment'] = 3;
 
 		//inisial
 		$this->pagination->initialize($config);
 
-		$data['sql'] = $this->User_model->info_beberapa_kos($config['per_page'], $config['uri_segment']);
+		$data['sql'] = $this->User_model->info_beberapa_kos($config['per_page'], $page);
 
 		$sudah_login = $this->session->userdata('sudah_login');
 		$data['id_role'] = $this->session->userdata('id_role');
@@ -511,7 +511,7 @@ class Main_Back_User extends CI_Controller
 			redirect(base_url('Login'));
 		} else {
 			// $this->load->view('user/header',$data);
-			$this->pagination->create_links();
+			// $this->pagination->create_links();
 			$this->load->view('navbar_user', $data);
 			$this->load->view('user/search', $data);
 		}
