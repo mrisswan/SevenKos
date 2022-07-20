@@ -10,15 +10,24 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <link rel="stylesheet" href="../asset/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/bootstrap.css' ?>">
 
-  <link rel="stylesheet" href="../asset/css/owl.carousel.min.css">
+  <!-- <link rel="stylesheet" href="../asset/css/animate.css"> -->
+  <link rel="stylesheet" href="<?= base_url('asset/css/animate.css') ?>">
+
+  <!-- <link rel="stylesheet" href="../asset/css/owl.carousel.min.css">
   <link rel="stylesheet" href="../asset/css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="../asset/css/magnific-popup.css">
+  <link rel="stylesheet" href="../asset/css/magnific-popup.css"> -->
+  <link rel="stylesheet" href="<?= base_url('asset/css/owl.carousel.min.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('asset/css/owl.theme.default.min.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('asset/css/magnific-popup.css') ?>">
 
 
-  <link rel="stylesheet" href="../asset/css/flaticon.css">
-  <link rel="stylesheet" href="../asset/css/style.css">
+  <!-- <link rel="stylesheet" href="../asset/css/flaticon.css">
+  <link rel="stylesheet" href="../asset/css/style.css"> -->
+  <link rel="stylesheet" href="<?= base_url('asset/css/flaticon.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('asset/css/style.css') ?>">
+</head>
 </head>
 
 <body>
@@ -45,12 +54,8 @@
       </div>
 
       <div class="container justify-content-center">
-
         <div class="row">
-
           <div class="col-md-12">
-
-
             <?php echo form_open('Main_Back_User/search') ?>
             <div class="input-group mb-3">
               <input type="text" class="form-control input-text" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2" name="keyword">
@@ -59,20 +64,14 @@
               </div>
             </div>
             <?php echo form_close() ?>
-
-
           </div>
-
         </div>
-
-
       </div>
 
       <br><br>
 
       <div class="row ftco-animate">
         <?php foreach ($sql as $kos) : ?>
-
           <div class="item" style="width:352px; margin: 2rem;">
             <div class="property-wrap ftco-animate">
               <img src="<?php echo base_url(); ?>file/kos_image/<?= $kos->image_header ?>" width="352px">
@@ -111,8 +110,8 @@
             </div>
           </div>
         <?php endforeach ?>
-        <?= $this->pagination->create_links(); ?>
       </div>
+      <?= $this->pagination->create_links(); ?>
     </div>
   </section>
 
@@ -177,7 +176,6 @@
       </div>
       <div class="row">
         <div class="col-md-12 text-center">
-
           <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             Copyright &copy;<script>
@@ -190,13 +188,11 @@
     </div>
   </footer>
 
-
-
   <!-- loader -->
   <!-- <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div> -->
 
 
-  <script src="../asset/js/jquery.min.js"></script>
+  <!-- <script src="../asset/js/jquery.min.js"></script>
   <script src="../asset/js/jquery-migrate-3.0.1.min.js"></script>
   <script src="../asset/js/popper.min.js"></script>
   <script src="../asset/js/bootstrap.min.js"></script>
@@ -206,10 +202,25 @@
   <script src="../asset/js/owl.carousel.min.js"></script>
   <script src="../asset/js/jquery.magnific-popup.min.js"></script>
   <script src="../asset/js/jquery.animateNumber.min.js"></script>
-  <script src="../asset/js/scrollax.min.js"></script>
+  <script src="../asset/js/scrollax.min.js"></script> -->
+  <script type="text/javascript" src="<?php echo base_url() . 'assets/js/bootstrap.js' ?>"></script>
+
+  <script src="<?= base_url('asset/js/jquery.min.js') ?>"></script>
+  <script src="<?= base_url('asset/js/jquery-migrate-3.0.1.min.js') ?>"></script>
+  <script src="<?= base_url('asset/js/popper.min.js') ?>"></script>
+  <script src="<?= base_url('asset/js/bootstrap.min.js') ?>"></script>
+  <script src="<?= base_url('asset/js/jquery.easing.1.3.js') ?>"></script>
+  <script src="<?= base_url('asset/js/jquery.waypoints.min.js') ?>"></script>
+  <script src="<?= base_url('asset/js/jquery.stellar.min.js') ?>"></script>
+  <script src="<?= base_url('asset/js/owl.carousel.min.js') ?>"></script>
+  <script src="<?= base_url('asset/js/jquery.magnific-popup.min.js') ?>"></script>
+  <script src="<?= base_url('asset/js/jquery.animateNumber.min.js') ?>"></script>
+  <script src="<?= base_url('asset/js/scrollax.min.js') ?>"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="../asset/js/google-map.js"></script>
-  <script src="../asset/js/main.js"></script>
+  <!-- <script src="../asset/js/google-map.js"></script>
+  <script src="../asset/js/main.js"></script> -->
+  <script src="<?= base_url('asset/js/google-map.js') ?>"></script>
+  <script src="<?= base_url('asset/js/main.js') ?>"></script>
 
 </body>
 
