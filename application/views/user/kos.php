@@ -55,30 +55,37 @@
               </div>
             </div>
             <?php echo form_close() ?>
+          </div>
+        </div>
+      </div>
 
-            <!-- <div class="col-md-2 col-sm-2 col-xs-2"> -->
-            <?php echo form_open('Main_Front_User/filter') ?>
-            <select class="form-control" name="kota">
+      <div class="d-flex p-3 justify-content-center">
+        <?php echo form_open('Main_Back_User/filter') ?>
+        <div class="form-inline">
+          <div class="p-2">
+            <select class="form-control " name="kota">
               <option>Kota</option>
               <option value="Jakarta">Jakarta</option>
               <option value="Yogyakarta">Yogyakarta</option>
               <option value="Surabaya">Surabaya</option>
               <option value="Bandung">Bandung</option>
             </select>
-
+          </div>
+          <div class="p-2">
             <select class="form-control" name="tipe">
               <option>Tipe</option>
               <option value="Campur">Campur</option>
               <option value="Putra">Putra</option>
               <option value="Putri">Putri</option>
             </select>
-
-            <?php echo form_submit(['name' => 'submit', 'value' => 'Search']) ?>
-            <?php echo form_close() ?>
-            <!-- </div> -->
+          </div>
+          <div class="p-2">
+            <?php echo form_submit(['name' => 'submit', 'value' => 'Search', 'class' => 'btn btn-success']) ?>
           </div>
         </div>
+        <?php echo form_close() ?>
       </div>
+
       <br><br>
 
       <div class="row ftco-animate">
