@@ -421,6 +421,7 @@ class Main_Back_User extends CI_Controller
 		$no_hp = $this->input->post('no_hp');
 		$alamat = $this->input->post('alamat');
 		$id_role = $this->input->post('id_role');
+		$profil = $this->input->post('profil');
 
 		$data = array(
 			'username' => $username,
@@ -430,7 +431,8 @@ class Main_Back_User extends CI_Controller
 			'email' => $email,
 			'no_hp' => $no_hp,
 			'alamat' => $alamat,
-			'id_role' => $id_role
+			'id_role' => $id_role,
+			'profil' => $profil
 		);
 		$this->User_model->input_data_user($data, 'tb_user');
 		$this->session->set_flashdata('suksesdaftar', '<font color ="green">Anda berhasil daftar, Silahkan login.</font>');
