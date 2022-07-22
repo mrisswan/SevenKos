@@ -259,19 +259,14 @@ class User_model extends CI_Model
 		$this->db->select('*');
 		$this->db->from('tbl_kos');
 		$this->db->like('slug', $keyword);
-		// $this->db->or_like('nim', $keyword);
-		// $this->db->or_like('tgl_lahir', $keyword);
-		// $this->db->or_like('jurusan', $keyword);
-		// $this->db->or_like('alamat', $keyword);
-		// $this->db->or_like('email', $keyword);
-		// $this->db->or_like('no_telp', $keyword);
 		return $this->db->get()->result();
 	}
 
-	public function filter($kota, $tipe)
+	public function filter()
 	{
-		$this->db->where("kota", $kota);
-		$this->db->where("tipe", $tipe);
-		return $this->db->get("tbl_kos");
+		$this->db->where("kota", $this->input->post('kota'));
+		$this->db->where("tipe", $this->input->post('tipe'));
+		$sql = $this->db->get("tbl_kos");
+		return $sql;
 	}
 }

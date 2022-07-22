@@ -127,7 +127,7 @@ class Main_Front_User extends CI_Controller
 	{
 		$kota = $this->input->get('kota');
 		$tipe = $this->input->get('tipe');
-		$data['sql'] = $this->User_model->filter($kota, $tipe)->result_array();
+		$data['sql'] = $this->User_model->filter($kota, $tipe)->result();
 		$this->load->view('navbar', $data);
 		$this->load->view('user/kos', $data);
 	}

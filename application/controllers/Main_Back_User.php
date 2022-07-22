@@ -14,8 +14,6 @@ class Main_Back_User extends CI_Controller
 		$this->load->library('form_validation');
 		$this->load->library('session');
 		$this->load->helper('security');
-		// $this->load->helper('url');
-		// $this->load->database();  
 	}
 
 	public function index()
@@ -27,8 +25,6 @@ class Main_Back_User extends CI_Controller
 		$data['email'] = $this->session->userdata('email');
 		$data['fullname'] = strtoupper($this->session->userdata('fullname'));
 
-
-
 		if (!$sudah_login) { // jika $sudah_login == false atau belum login maka akan kembali ke redirect yang di tuju
 			redirect(base_url('Login'));
 		} else {
@@ -38,7 +34,6 @@ class Main_Back_User extends CI_Controller
 			//   $this->load->view('index');
 		}
 	}
-
 
 	public function dashboard()
 	{
@@ -58,50 +53,6 @@ class Main_Back_User extends CI_Controller
 			//   $this->load->view('index');
 		}
 	}
-
-	/* public function view_profile(){
-		$sudah_login = $this->session->userdata('sudah_login');
-	    $data['id_role'] = $this->session->userdata('id_role');
-	    $data['username'] = $this->session->userdata('username');
-	    $data['email'] = $this->session->userdata('email');
-	    $data['fullname'] = strtoupper($this->session->userdata('fullname'));
-	    $data['jk'] = $this->session->userdata('jk');
-	    $data['no_hp'] = $this->session->userdata('no_hp');
-	    $data['alamat'] = $this->session->userdata('alamat');
-	    $data['user'] = $this->User_model->get_listuser();
-	    $data['user'] = $this->User_model->get_listrole();
-
-	    if (!$sudah_login) { // jika $sudah_login == false atau belum login maka akan kembali ke redirect yang di tuju
-	      redirect(base_url('Login'));
-	    } else {
-	    	$this->load->view('header',$data);
-		    $this->load->view('menu_user');
-		    $this->load->view('footer');
-			$this->load->view('view_profile');
-	    }
-
-	} */
-
-	/*public function view_profile()
-	{
-		$sudah_login = $this->session->userdata('sudah_login');
-	    $data['id_role'] = $this->session->userdata('id_role');
-	    $data['username'] = $this->session->userdata('username');
-	    $data['email'] = $this->session->userdata('email');
-	    $data['id_user'] = $this->session->userdata('id_user');
-	    $data['fullname'] = strtoupper($this->session->userdata('fullname'));
-
-	    if (!$sudah_login) { // jika $sudah_login == false atau belum login maka akan kembali ke redirect yang di tuju
-	      redirect(base_url('Login'));
-	    }else { 
-		    $this->load->view('header',$data);
-		    $this->load->view('menu_user');
-		    $this->load->view('footer');
-			$this->load->view('view_user');
-	    }		
-	} */
-
-
 
 	public function data_kos($id)
 	{
@@ -703,5 +654,14 @@ class Main_Back_User extends CI_Controller
 		// $this->load->view('user/menu');
 		$this->load->view('user/search', $data);
 		//   $this->load->view('footer');
+	}
+
+	public function filter()
+	{
+		$kota = $this->input->post('kota');
+		$tipe = $this->input->post('tipe');
+		$data['sql'] = $this->User_model->filter($kota, $tipe)->result_array();
+		$this->load->view('navbar', $data);
+		$this->load->view('user/search', $data);
 	}
 }

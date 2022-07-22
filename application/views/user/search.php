@@ -7,22 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
   <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/bootstrap.css' ?>">
-
   <!-- <link rel="stylesheet" href="../asset/css/animate.css"> -->
   <link rel="stylesheet" href="<?= base_url('asset/css/animate.css') ?>">
-
   <!-- <link rel="stylesheet" href="../asset/css/owl.carousel.min.css">
   <link rel="stylesheet" href="../asset/css/owl.theme.default.min.css">
   <link rel="stylesheet" href="../asset/css/magnific-popup.css"> -->
   <link rel="stylesheet" href="<?= base_url('asset/css/owl.carousel.min.css') ?>">
   <link rel="stylesheet" href="<?= base_url('asset/css/owl.theme.default.min.css') ?>">
   <link rel="stylesheet" href="<?= base_url('asset/css/magnific-popup.css') ?>">
-
-
   <!-- <link rel="stylesheet" href="../asset/css/flaticon.css">
   <link rel="stylesheet" href="../asset/css/style.css"> -->
   <link rel="stylesheet" href="<?= base_url('asset/css/flaticon.css') ?>">
@@ -64,6 +58,28 @@
               </div>
             </div>
             <?php echo form_close() ?>
+
+            <!-- <div class="col-md-2 col-sm-2 col-xs-2"> -->
+              <?php echo form_open('Main_Front_User/filter') ?>
+              <select class="form-control" name="kota">
+                <option>Kota</option>
+                <option value="Jakarta">Jakarta</option>
+                <option value="Yogyakarta">Yogyakarta</option>
+                <option value="Surabaya">Surabaya</option>
+                <option value="Bandung">Bandung</option>
+              </select>
+
+              <select class="form-control" name="tipe">
+                <option>Tipe</option>
+                <option value="Campur">Campur</option>
+                <option value="Putra">Putra</option>
+                <option value="Putri">Putri</option>
+              </select>
+
+              <?php echo form_submit(['name' => 'submit', 'value' => 'Search']) ?>
+              <?php echo form_close() ?>
+            <!-- </div> -->
+
           </div>
         </div>
       </div>
@@ -100,9 +116,7 @@
                   <span class="text-right"><?= $kos->date ?></span>
                 </div>
                 <?php if ($this->session->userdata('username')) { ?>
-
                   <a href=" <?= base_url('transaksi/sewa/tambah_sewa/' . $kos->id_kos); ?> " class="btn btn-warning  ml-1 ">Sewa</a>
-
                 <?php } else { ?>
                   <a href=" <?= base_url('transaksi/sewa/tambah_sewa/' . $rm->id_kos); ?> " class="btn btn-warning  ml-1 ">Sewa</a>
                 <?php } ?>
@@ -188,6 +202,47 @@
     </div>
   </footer>
 
+  <script type="text/javascript">
+    var table;
+
+    $(document).ready(function() {
+
+      //datatables
+      table = $('#table').DataTable({
+
+        "processing": true, //Feature control the processing indicator.
+        "serverSide": true, //Feature control DataTables' server-side processing mode.
+        "order": [], //Initial no order.
+
+        // Load data for the table's content from an Ajax source
+        "ajax": {
+          "url": "<?php echo site_url('Main_Back_User/ajax_list') ?>",
+          "type": "POST",
+          "data": function(data) {
+            data.kota = $('#kota').val();
+            data.tipe = $('#tipe').val();
+          }
+        },
+
+        //Set column definition initialisation properties.
+        "columnDefs": [{
+          "targets": [0], //first column / numbering column
+          "orderable": false, //set not orderable
+        }, ],
+
+      });
+
+      $('#btn-filter').click(function() { //button filter event click
+        table.ajax.reload(); //just reload table
+      });
+      $('#btn-reset').click(function() { //button reset event click
+        $('#form-filter')[0].reset();
+        table.ajax.reload(); //just reload table
+      });
+
+    });
+  </script>
+
   <!-- loader -->
   <!-- <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div> -->
 
@@ -221,7 +276,6 @@
   <script src="../asset/js/main.js"></script> -->
   <script src="<?= base_url('asset/js/google-map.js') ?>"></script>
   <script src="<?= base_url('asset/js/main.js') ?>"></script>
-
 </body>
 
 </html>
