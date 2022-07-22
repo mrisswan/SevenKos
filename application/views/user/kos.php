@@ -44,28 +44,6 @@
         </div>
       </div>
 
-      <!-- <div class="col-md-2 col-sm-2 col-xs-2">
-    <?php echo form_open('Main_Front_User/filter') ?>
-      <select class="form-control" name="kota">
-        <option>Kota</option>
-        <option value="Jakarta">Jakarta</option>
-        <option value="Yogyakarta">Yogyakarta</option>
-        <option value="Surabaya">Surabaya</option>
-        <option value="Bandung">Bandung</option>
-      </select></div>
-
-      <div class="col-md-2 col-sm-2 col-xs-2">
-      <select class="form-control" name="tipe">
-        <option>Tipe</option>
-        <option value="Campur">Campur</option>
-        <option value="Putra">Putra</option>
-        <option value="Putri">Putri</option>
-      </select></div>
-
-      <?php echo form_submit(['name' => 'submit', 'value' => 'Search']) ?>
-      <?php echo form_close() ?>
-      </div>
-      </div> -->
       <div class="container justify-content-center">
         <div class="row">
           <div class="col-md-12">
@@ -78,65 +56,67 @@
             </div>
             <?php echo form_close() ?>
 
-            <div class="col-md-2 col-sm-2 col-xs-2">
-              <?php echo form_open('Main_Front_User/filter') ?>
-              <select class="form-control" name="kota">
-                <option>Kota</option>
-                <option value="Jakarta">Jakarta</option>
-                <option value="Yogyakarta">Yogyakarta</option>
-                <option value="Surabaya">Surabaya</option>
-                <option value="Bandung">Bandung</option>
-              </select>
+            <!-- <div class="col-md-2 col-sm-2 col-xs-2"> -->
+            <?php echo form_open('Main_Front_User/filter') ?>
+            <select class="form-control" name="kota">
+              <option>Kota</option>
+              <option value="Jakarta">Jakarta</option>
+              <option value="Yogyakarta">Yogyakarta</option>
+              <option value="Surabaya">Surabaya</option>
+              <option value="Bandung">Bandung</option>
+            </select>
 
-              <select class="form-control" name="tipe">
-                <option>Tipe</option>
-                <option value="Campur">Campur</option>
-                <option value="Putra">Putra</option>
-                <option value="Putri">Putri</option>
-              </select>
+            <select class="form-control" name="tipe">
+              <option>Tipe</option>
+              <option value="Campur">Campur</option>
+              <option value="Putra">Putra</option>
+              <option value="Putri">Putri</option>
+            </select>
 
-              <?php echo form_submit(['name' => 'submit', 'value' => 'Search']) ?>
-              <?php echo form_close() ?>
-            </div>
+            <?php echo form_submit(['name' => 'submit', 'value' => 'Search']) ?>
+            <?php echo form_close() ?>
+            <!-- </div> -->
+          </div>
+        </div>
+      </div>
+      <br><br>
 
-            <br><br>
-
-            <div class="row ftco-animate">
-              <?php foreach ($sql as $kos) : ?>
-
-                <div class="item" style="width:352px; margin: 2rem;">
-                  <div class="property-wrap ftco-animate">
-                    <img src="<?php echo base_url(); ?>file/kos_image/<?= $kos->image_header ?>" width="352px">
-                    <div class="rent-sale">
-                      <span class="rent"><?= $kos->tipe ?></span>
-                    </div>
-                    <p class="price"><span class="orig-price">Rp. <?= $this->cart->format_number($kos->harga); ?><small> / bulan</small></span></p>
-                    </a>
-                    <button type="button" class="btn btn-success btn-rounded" style="margin-left: 18em">
-                      <?php
-                      if ($kos->status == '1') {
-                        echo 'Tersedia';
-                      } elseif ($kos->status == '0') {
-                        echo 'Penuh';
-                      } ?>
-                    </button>
-                    <div class="text">
-                      <h3> <a href="<?= base_url(); ?>Main_Front_User/view_konten_kos/<?= $kos->slug ?>">
-                          <?= $kos->nama ?></a>
-                      </h3>
-                      <span class="location"><?= $kos->alamat ?></span>
-                      <div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
-                        <div class="d-flex align-items-center">
-                          <div class="img" style="background-image: url(images/person_1.jpg);"></div>
-                        </div>
-                        <span class="text-right"><?= $kos->date ?></span>
-                      </div>
-                    </div>
+      <div class="row ftco-animate">
+        <?php foreach ($sql as $kos) : ?>
+          <div class="item" style="width:352px; margin: 2rem;">
+            <div class="property-wrap ftco-animate">
+              <img src="<?php echo base_url(); ?>file/kos_image/<?= $kos->image_header ?>" width="352px">
+              <div class="rent-sale">
+                <span class="rent"><?= $kos->tipe ?></span>
+              </div>
+              <p class="price"><span class="orig-price">Rp. <?= $this->cart->format_number($kos->harga); ?><small> / bulan</small></span></p>
+              </a>
+              <button type="button" class="btn btn-success btn-rounded" style="margin-left: 18em">
+                <?php
+                if ($kos->status == '1') {
+                  echo 'Tersedia';
+                } elseif ($kos->status == '0') {
+                  echo 'Penuh';
+                } ?>
+              </button>
+              <div class="text">
+                <h3> <a href="<?= base_url(); ?>Main_Front_User/view_konten_kos/<?= $kos->slug ?>">
+                    <?= $kos->nama ?></a>
+                </h3>
+                <span class="location"><?= $kos->alamat ?></span>
+                <div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
+                  <div class="d-flex align-items-center">
+                    <div class="img" style="background-image: url(images/person_1.jpg);"></div>
                   </div>
+                  <span class="text-right"><?= $kos->date ?></span>
                 </div>
-              <?php endforeach ?>
+              </div>
             </div>
           </div>
+        <?php endforeach ?>
+      </div>
+      <?= $this->pagination->create_links(); ?>
+    </div>
   </section>
 
   <footer class="ftco-footer ftco-section">
@@ -213,11 +193,8 @@
     </div>
   </footer>
 
-
-
   <!-- loader -->
   <!-- <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div> -->
-
 
   <script src="../asset/js/jquery.min.js"></script>
   <script src="../asset/js/jquery-migrate-3.0.1.min.js"></script>

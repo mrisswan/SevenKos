@@ -660,7 +660,7 @@ class Main_Back_User extends CI_Controller
 	{
 		$kota = $this->input->post('kota');
 		$tipe = $this->input->post('tipe');
-		$data['sql'] = $this->User_model->filter($kota, $tipe)->result_array();
+		$data['sql'] = $this->User_model->filter($kota, $tipe)->result();
 		$this->load->view('navbar', $data);
 		$this->load->view('user/search', $data);
 	}

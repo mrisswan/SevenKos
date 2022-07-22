@@ -21,6 +21,10 @@
   <link rel="stylesheet" href="../asset/css/style.css"> -->
   <link rel="stylesheet" href="<?= base_url('asset/css/flaticon.css') ?>">
   <link rel="stylesheet" href="<?= base_url('asset/css/style.css') ?>">
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 </head>
 
@@ -49,7 +53,7 @@
 
       <div class="container justify-content-center">
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-12" style="display: inline-block;">
             <?php echo form_open('Main_Back_User/search') ?>
             <div class="input-group mb-3">
               <input type="text" class="form-control input-text" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2" name="keyword">
@@ -58,31 +62,65 @@
               </div>
             </div>
             <?php echo form_close() ?>
-
-            <!-- <div class="col-md-2 col-sm-2 col-xs-2"> -->
-              <?php echo form_open('Main_Front_User/filter') ?>
-              <select class="form-control" name="kota">
-                <option>Kota</option>
-                <option value="Jakarta">Jakarta</option>
-                <option value="Yogyakarta">Yogyakarta</option>
-                <option value="Surabaya">Surabaya</option>
-                <option value="Bandung">Bandung</option>
-              </select>
-
-              <select class="form-control" name="tipe">
-                <option>Tipe</option>
-                <option value="Campur">Campur</option>
-                <option value="Putra">Putra</option>
-                <option value="Putri">Putri</option>
-              </select>
-
-              <?php echo form_submit(['name' => 'submit', 'value' => 'Search']) ?>
-              <?php echo form_close() ?>
-            <!-- </div> -->
-
           </div>
         </div>
       </div>
+
+      <!-- seng iki -->
+
+      <div class="d-flex p-3 justify-content-center">
+        <?php echo form_open('Main_Back_User/filter') ?>
+        <!-- <div class="form-group mb-2 "> -->
+        <div class="p-2">
+          <select class="form-control" name="kota">
+            <option>Kota</option>
+            <option value="Jakarta">Jakarta</option>
+            <option value="Yogyakarta">Yogyakarta</option>
+            <option value="Surabaya">Surabaya</option>
+            <option value="Bandung">Bandung</option>
+          </select>
+        </div>
+        <!-- </div> -->
+        <!-- <div class="form-group mb-2"> -->
+        <div class="p-2">
+          <select class="form-control" name="tipe">
+            <option>Tipe</option>
+            <option value="Campur">Campur</option>
+            <option value="Putra">Putra</option>
+            <option value="Putri">Putri</option>
+          </select>
+        </div>
+        <!-- </div> -->
+        <div class="p-2">
+          <?php echo form_submit(['name' => 'submit', 'value' => 'Search']) ?>
+        </div>
+        <?php echo form_close() ?>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2 col-sm-2 col-x s-2">
+          <?php echo form_open('Main_Back_User/filter') ?>
+          <select class="form-control" name="kota">
+            <option>Kota</option>
+            <option value="Jakarta">Jakarta</option>
+            <option value="Yogyakarta">Yogyakarta</option>
+            <option value="Surabaya">Surabaya</option>
+            <option value="Bandung">Bandung</option>
+          </select>
+
+          <select class="form-control" name="tipe">
+            <option>Tipe</option>
+            <option value="Campur">Campur</option>
+            <option value="Putra">Putra</option>
+            <option value="Putri">Putri</option>
+          </select>
+
+          <?php echo form_submit(['name' => 'submit', 'value' => 'Search']) ?>
+          <?php echo form_close() ?>
+        </div>
+      </div>
+
+      <!-- ikilo -->
 
       <br><br>
 

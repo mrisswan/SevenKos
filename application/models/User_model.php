@@ -163,7 +163,7 @@ class User_model extends CI_Model
 	// 	return $sql;
 	// }
 
-	public function info_beberapa_kos($limit, $start)
+	public function info_beberapa_kos($limit = 0, $start = 0)
 	{
 		$this->db->select('tbl_kos.*, tb_user.id_user');
 		$this->db->from('tbl_kos');
