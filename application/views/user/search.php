@@ -66,61 +66,32 @@
         </div>
       </div>
 
-      <!-- seng iki -->
-
       <div class="d-flex p-3 justify-content-center">
         <?php echo form_open('Main_Back_User/filter') ?>
-        <!-- <div class="form-group mb-2 "> -->
-        <div class="p-2">
-          <select class="form-control" name="kota">
-            <option>Kota</option>
-            <option value="Jakarta">Jakarta</option>
-            <option value="Yogyakarta">Yogyakarta</option>
-            <option value="Surabaya">Surabaya</option>
-            <option value="Bandung">Bandung</option>
-          </select>
-        </div>
-        <!-- </div> -->
-        <!-- <div class="form-group mb-2"> -->
-        <div class="p-2">
-          <select class="form-control" name="tipe">
-            <option>Tipe</option>
-            <option value="Campur">Campur</option>
-            <option value="Putra">Putra</option>
-            <option value="Putri">Putri</option>
-          </select>
-        </div>
-        <!-- </div> -->
-        <div class="p-2">
-          <?php echo form_submit(['name' => 'submit', 'value' => 'Search']) ?>
+        <div class="form-inline">
+          <div class="p-2">
+            <select class="form-control " name="kota">
+              <option>Kota</option>
+              <option value="Jakarta">Jakarta</option>
+              <option value="Yogyakarta">Yogyakarta</option>
+              <option value="Surabaya">Surabaya</option>
+              <option value="Bandung">Bandung</option>
+            </select>
+          </div>
+          <div class="p-2">
+            <select class="form-control" name="tipe">
+              <option>Tipe</option>
+              <option value="Campur">Campur</option>
+              <option value="Putra">Putra</option>
+              <option value="Putri">Putri</option>
+            </select>
+          </div>
+          <div class="p-2">
+            <?php echo form_submit(['name' => 'submit', 'value' => 'Search', 'class' => 'btn btn-success']) ?>
+          </div>
         </div>
         <?php echo form_close() ?>
       </div>
-
-      <div class="row">
-        <div class="col-md-2 col-sm-2 col-x s-2">
-          <?php echo form_open('Main_Back_User/filter') ?>
-          <select class="form-control" name="kota">
-            <option>Kota</option>
-            <option value="Jakarta">Jakarta</option>
-            <option value="Yogyakarta">Yogyakarta</option>
-            <option value="Surabaya">Surabaya</option>
-            <option value="Bandung">Bandung</option>
-          </select>
-
-          <select class="form-control" name="tipe">
-            <option>Tipe</option>
-            <option value="Campur">Campur</option>
-            <option value="Putra">Putra</option>
-            <option value="Putri">Putri</option>
-          </select>
-
-          <?php echo form_submit(['name' => 'submit', 'value' => 'Search']) ?>
-          <?php echo form_close() ?>
-        </div>
-      </div>
-
-      <!-- ikilo -->
 
       <br><br>
 
@@ -280,22 +251,6 @@
 
     });
   </script>
-
-  <!-- loader -->
-  <!-- <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div> -->
-
-
-  <!-- <script src="../asset/js/jquery.min.js"></script>
-  <script src="../asset/js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="../asset/js/popper.min.js"></script>
-  <script src="../asset/js/bootstrap.min.js"></script>
-  <script src="../asset/js/jquery.easing.1.3.js"></script>
-  <script src="../asset/js/jquery.waypoints.min.js"></script>
-  <script src="../asset/js/jquery.stellar.min.js"></script>
-  <script src="../asset/js/owl.carousel.min.js"></script>
-  <script src="../asset/js/jquery.magnific-popup.min.js"></script>
-  <script src="../asset/js/jquery.animateNumber.min.js"></script>
-  <script src="../asset/js/scrollax.min.js"></script> -->
   <script type="text/javascript" src="<?php echo base_url() . 'assets/js/bootstrap.js' ?>"></script>
 
   <script src="<?= base_url('asset/js/jquery.min.js') ?>"></script>
