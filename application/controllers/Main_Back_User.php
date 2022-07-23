@@ -416,23 +416,23 @@ class Main_Back_User extends CI_Controller
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 		$fullname = $this->input->post('fullname');
+		// $foto = $this->input->post('foto');
 		$jk = $this->input->post('jk');
 		$email = $this->input->post('email');
 		$no_hp = $this->input->post('no_hp');
 		$alamat = $this->input->post('alamat');
 		$id_role = $this->input->post('id_role');
-		$profil = $this->input->post('profil');
 
 		$data = array(
 			'username' => $username,
 			'password' => md5($password),
 			'fullname' => $fullname,
+			// 'foto' => $foto,
 			'jk' => $jk,
 			'email' => $email,
 			'no_hp' => $no_hp,
 			'alamat' => $alamat,
 			'id_role' => $id_role,
-			'profil' => $profil
 		);
 		$this->User_model->input_data_user($data, 'tb_user');
 		$this->session->set_flashdata('suksesdaftar', '<font color ="green">Anda berhasil daftar, Silahkan login.</font>');

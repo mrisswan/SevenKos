@@ -36,10 +36,17 @@
                         <span>Fullname</span>
                         <input type="text" class="form-control" name="fullname" placeholder="Fullname" required autofocus>
                     </div>
-                    <div class="inputBx">
+                    <!-- <div class="inputBx">
                         <span>Upload</span>
-                        <input type="text" class="form-control" name="fullname" placeholder="Fullname" required autofocus>
-                    </div>
+                        <input type="text" class="form-control" name="profil" placeholder="Profil" required autofocus>
+                    </div> -->
+                    <!-- <div class="inputBx">
+                        <span>Upload Profil</span>
+                        <label for="image">Upload Gambar</label>
+                        <div class="form-group">
+                            <input type="file" name="foto" accept="image/png, image/gif, image/jpeg">
+                        </div>
+                    </div> -->
                     <div class="inputBx">
                         <span>Email</span>
                         <input type="email" class="form-control" name="email" placeholder="Email" required>
@@ -76,10 +83,6 @@
                     <br>
                     <div class="inputBx">
                         <input type="submit" value="Sign up" name="">
-                    </div>
-                    <div class="inputBx">
-                        <span>Password</span>
-                        <input type="password" class="form-control" name="password" minlength="6" placeholder="Password" required>
                     </div>
                     <div class="inputBx">
                         <p>Already have an account? <a href="<?php echo base_url() ?>Login">Sign in</a></p>
