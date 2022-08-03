@@ -19,6 +19,7 @@
             <div class="formBx">
                 <h1>SevenKos</h1>
                 <h2>Sign up</h2>
+                <?= validation_errors(); ?>
                 <form id="sign_up" method="POST" action="<?php echo base_url() ?>Main_Back_User/proses_daftar_user">
                     <div class="inputBx">
                         <?php if (isset($_GET['error'])) { ?>
@@ -30,17 +31,19 @@
                     </div>
                     <div class="inputBx">
                         <span>Username</span>
-                        <input type="text" class="form-control" name="username" placeholder="Username" required autofocus>
+                        <input type="text" class="form-control" name="username" placeholder="Username">
+                        <!-- required autofocus -->
                     </div>
                     <div class="inputBx">
                         <span>Fullname</span>
-                        <input type="text" class="form-control" name="fullname" placeholder="Fullname" required autofocus>
+                        <input type="text" class="form-control" name="fullname" placeholder="Fullname">
+                        <!-- required autofocus -->
                     </div>
                     <!-- <div class="inputBx">
                         <span>Upload</span>
                         <input type="text" class="form-control" name="profil" placeholder="Profil" required autofocus>
-                    </div> -->
-                    <!-- <div class="inputBx">
+                    </div>
+                    <div class="inputBx">
                         <span>Upload Profil</span>
                         <label for="image">Upload Gambar</label>
                         <div class="form-group">
@@ -49,7 +52,8 @@
                     </div> -->
                     <div class="inputBx">
                         <span>Email</span>
-                        <input type="email" class="form-control" name="email" placeholder="Email" required>
+                        <input type="email" class="form-control" name="email" placeholder="Email">
+                        <!-- required -->
                     </div>
                     <div class="form-check">
                         <input name="jk" type="radio" class="form-check-input" id="radio_3" value="Pria" />
@@ -59,15 +63,18 @@
                     </div>
                     <div class="inputBx">
                         <span>Password</span>
-                        <input type="password" class="form-control" name="password" minlength="6" placeholder="Password" required>
+                        <input type="password" class="form-control" name="password1" minlength="6" placeholder="Password">
+                        <!-- required -->
                     </div>
                     <div class="inputBx">
                         <span>Confirm Password</span>
-                        <input type="password" class="form-control" name="confirm" minlength="6" placeholder="Confirm Password" required>
+                        <input type="password" class="form-control" name="password2" minlength="6" placeholder="Confirm Password">
+                        <!-- required -->
                     </div>
                     <div class="inputBx">
                         <span>Telephone Number</span>
-                        <input type="text" class="form-control" name="no_hp" placeholder="No HP" required autofocus>
+                        <input type="text" class="form-control" name="no_hp" placeholder="No HP">
+                        <!-- required autofocus -->
                     </div>
                     <div class="inputBx">
                         <span>Address</span>
@@ -75,7 +82,8 @@
                     </div>
                     <div class="inputBx">
                         <span>Role</span>
-                        <select class="form-control show-tick" name="id_role" required>
+                        <select class="form-control show-tick" name="id_role">
+                            <!-- required -->
                             <option value="2">Customer</option>
                             <option value="3">Owner</option>
                         </select>

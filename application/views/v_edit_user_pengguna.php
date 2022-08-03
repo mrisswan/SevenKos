@@ -36,7 +36,7 @@
         <div class="card-profile">
           <div class="">
             <!-- <h4>Username :</h4> -->
-            <input type="text" name="username" id="username" >
+            <input type="text" name="username" id="username">
           </div>
           <div class="row">
             <input type="hidden" id="id_user" value="<?php echo $u->id_user ?>" name="id_user" required="required">

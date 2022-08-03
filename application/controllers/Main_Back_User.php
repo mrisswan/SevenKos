@@ -376,18 +376,18 @@ class Main_Back_User extends CI_Controller
 		}
 
 		$data = array(
-			'date'		=> $date,
-			'time'		=> $time,
-			'image_header'		=> $image_header,
+			'date'			=> $date,
+			'time'			=> $time,
+			'image_header'	=> $image_header,
 			'status'		=> $status,
 			'id_user'		=> $id_user,
-			'slug'		=> $slug,
-			'nama'		=> $nama,
-			'tipe'		=> $tipe,
+			'slug'			=> $slug,
+			'nama'			=> $nama,
+			'tipe'			=> $tipe,
 			'deskripsi' 	=> $deskripsi,
 			'alamat'		=> $alamat,
-			'kota'		=> $kota,
-			'harga'		=> $harga,
+			'kota'			=> $kota,
+			'harga'			=> $harga,
 		);
 
 		$this->User_model->updatedata('tbl_kos', $data, array('id_kos' => $id_kos));
@@ -413,33 +413,58 @@ class Main_Back_User extends CI_Controller
 
 	public function proses_daftar_user()
 	{
-		$username = $this->input->post('username');
-		$password = $this->input->post('password');
-		$fullname = $this->input->post('fullname');
-		// $foto = $this->input->post('foto');
-		$jk = $this->input->post('jk');
-		$email = $this->input->post('email');
-		$no_hp = $this->input->post('no_hp');
-		$alamat = $this->input->post('alamat');
-		$id_role = $this->input->post('id_role');
+		//trim berfungsi ketika spasi diawal dan diakhir tidak masuk ke database
+		$this->form_validation->set_rules('username', 'Username', 'required');
+		$this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[3]|matches[password2]');
+		$this->form_validation->set_rules('password2', 'Password', 'required|trim|min_length[3]|matches[password1]');
+		$this->form_validation->set_rules('passconf', 'Password Confirmation', 'required');
+		$this->form_validation->set_rules('jk', 'jk', 'required|trim');
+		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[tb_user.email]', [
+			'is_unique' => 'This email has already registered'
+		]);
+		$this->form_validation->set_rules('no_hp', 'no_hp', 'required|trim|is_unique[tb_user.no_hp]', [
+			'is_unique' => 'This Nomor Handphone has already taken'
+		]);
+		$this->form_validation->set_rules('alamat', 'alamat', 'required|trim');
+		$this->form_validation->set_rules('id_role', 'id_role', 'required|trim');
 
-		$data = array(
-			'username' => $username,
-			'password' => md5($password),
-			'fullname' => $fullname,
-			// 'foto' => $foto,
-			'jk' => $jk,
-			'email' => $email,
-			'no_hp' => $no_hp,
-			'alamat' => $alamat,
-			'id_role' => $id_role,
-		);
-		$this->User_model->input_data_user($data, 'tb_user');
-		$this->session->set_flashdata('suksesdaftar', '<font color ="green">Anda berhasil daftar, Silahkan login.</font>');
-		redirect('Login');
+		if ($this->form_validation->run() == FALSE) {
+			$data['title'] = 'Registration';
+			$this->load->view('navbar_user');
+			$this->load->view('v_daftar_user');
+			// $this->load->view('templates/js');
+			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+			Congratulation! Your account has heen created! Please Activate Your Account
+			</div>');
+			redirect('Main_Back_User/daftar_user');
+			// echo "gagal";
+		} else {
+			$username = $this->input->post('username');
+			$password = $this->input->post('password');
+			$fullname = $this->input->post('fullname');
+			// $foto = $this->input->post('foto');
+			$jk = $this->input->post('jk');
+			$email = $this->input->post('email');
+			$no_hp = $this->input->post('no_hp');
+			$alamat = $this->input->post('alamat');
+			$id_role = $this->input->post('id_role');
+
+			$data = array(
+				'username'	=> $username,
+				'password'	=> md5($password),
+				'fullname'	=> $fullname,
+				// 'foto' => $foto,
+				'jk'		=> $jk,
+				'email'		=> $email,
+				'no_hp' 	=> $no_hp,
+				'alamat' 	=> $alamat,
+				'id_role' 	=> $id_role,
+			);
+			$this->User_model->input_data_user($data, 'tb_user');
+			$this->session->set_flashdata('suksesdaftar', '<font color ="green">Anda berhasil daftar, Silahkan login.</font>');
+			redirect('Login');
+		}
 	}
-
-
 
 	public function semua_kos($page = 0)
 	{
@@ -498,11 +523,9 @@ class Main_Back_User extends CI_Controller
 		$data['email'] = $this->session->userdata('email');
 		$data['fullname'] = strtoupper($this->session->userdata('fullname'));
 
-
 		if (!$sudah_login) { // jika $sudah_login == false atau belum login maka akan kembali ke redirect yang di tuju
 			redirect(base_url('Login'));
 		} else {
-
 			$this->load->view('header', $data);
 			$this->load->view('menu_user');
 			$this->load->view('footer');
@@ -634,7 +657,7 @@ class Main_Back_User extends CI_Controller
 			'kota'				=> $data_kos[0]['kota'],
 			'harga'				=> $data_kos[0]['harga'],
 			'no_hp'				=> $data_kos[0]['no_hp'],
-			'fullname'				=> $data_kos[0]['fullname'],
+			'fullname'			=> $data_kos[0]['fullname'],
 			'tipe'				=> $data_kos[0]['tipe'],
 			'image_header'		=> $data_kos[0]['image_header']
 		);

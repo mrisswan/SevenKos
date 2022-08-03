@@ -92,17 +92,13 @@ class User_model extends CI_Model
 
 	function getKos($where = '')
 	{
-		return $this->db->query("select tbl_kos.*, tb_user.* FROM tbl_kos  JOIN
-		tb_user ON tbl_kos.id_user=tb_user.id_user $where;");
+		return $this->db->query("select tbl_kos.*, tb_user.* FROM tbl_kos JOIN tb_user ON tbl_kos.id_user=tb_user.id_user $where;");
 	}
 
 	function getJumlahKos($where = '')
 	{
 		return $this->db->query("select * from tbl_kos $where;");
 	}
-
-
-
 
 	function getJumlahUser($where = '')
 	{
@@ -138,7 +134,6 @@ class User_model extends CI_Model
 		return $sql;
 	}
 
-
 	public function info_user_pengguna($id)
 	{
 		$this->db->select('tb_user.*');
@@ -168,7 +163,6 @@ class User_model extends CI_Model
 		$this->db->select('tbl_kos.*, tb_user.id_user');
 		$this->db->from('tbl_kos');
 		$this->db->join('tb_user', 'tbl_kos.id_user = tb_user.id_user');
-		// $sql = $this->db->get()->result();
 		$sql = $this->db->limit($limit, $start)->get()->result();
 		return $sql;
 	}
