@@ -414,10 +414,12 @@ class Main_Back_User extends CI_Controller
 	public function proses_daftar_user()
 	{
 		//trim berfungsi ketika spasi diawal dan diakhir tidak masuk ke database
-		$this->form_validation->set_rules('username', 'Username', 'required');
+		$this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[tb_user.username]', [
+			'is_unique' => 'This username has already taken'
+		]);
 		$this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[3]|matches[password2]');
 		$this->form_validation->set_rules('password2', 'Password', 'required|trim|min_length[3]|matches[password1]');
-		$this->form_validation->set_rules('passconf', 'Password Confirmation', 'required');
+		$this->form_validation->set_rules('fullname', 'fullname', 'required|trim');
 		$this->form_validation->set_rules('jk', 'jk', 'required|trim');
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[tb_user.email]', [
 			'is_unique' => 'This email has already registered'
@@ -430,14 +432,13 @@ class Main_Back_User extends CI_Controller
 
 		if ($this->form_validation->run() == FALSE) {
 			$data['title'] = 'Registration';
-			$this->load->view('navbar_user');
-			$this->load->view('v_daftar_user');
+			// $this->load->view('navbar_user');
+			// $this->load->view('v_daftar_user');
 			// $this->load->view('templates/js');
 			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-			Congratulation! Your account has heen created! Please Activate Your Account
-			</div>');
+            Congratulation! Your account has heen created! Please Activate Your Account
+            </div>');
 			redirect('Main_Back_User/daftar_user');
-			// echo "gagal";
 		} else {
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');

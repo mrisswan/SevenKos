@@ -39,17 +39,6 @@
                         <input type="text" class="form-control" name="fullname" placeholder="Fullname">
                         <!-- required autofocus -->
                     </div>
-                    <!-- <div class="inputBx">
-                        <span>Upload</span>
-                        <input type="text" class="form-control" name="profil" placeholder="Profil" required autofocus>
-                    </div>
-                    <div class="inputBx">
-                        <span>Upload Profil</span>
-                        <label for="image">Upload Gambar</label>
-                        <div class="form-group">
-                            <input type="file" name="foto" accept="image/png, image/gif, image/jpeg">
-                        </div>
-                    </div> -->
                     <div class="inputBx">
                         <span>Email</span>
                         <input type="email" class="form-control" name="email" placeholder="Email">
@@ -102,3 +91,14 @@
 </body>
 
 </html>
+<!-- <div class="inputBx">
+    <span>Upload</span>
+    <input type="text" class="form-control" name="profil" placeholder="Profil" required autofocus>
+</div>
+<div class="inputBx">
+    <span>Upload Profil</span>
+    <label for="image">Upload Gambar</label>
+    <div class="form-group">
+        <input type="file" name="foto" accept="image/png, image/gif, image/jpeg">
+    </div>
+</div> -->
