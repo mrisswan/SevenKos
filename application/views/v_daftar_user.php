@@ -19,7 +19,7 @@
             <div class="formBx">
                 <h1>SevenKos</h1>
                 <h2>Sign up</h2>
-                <?= validation_errors(); ?>
+                <!-- <?= validation_errors(); ?> -->
                 <form id="sign_up" method="POST" action="<?php echo base_url() ?>Main_Back_User/proses_daftar_user">
                     <div class="inputBx">
                         <?php if (isset($_GET['error'])) { ?>
@@ -30,53 +30,47 @@
                         <?php } ?>
                     </div>
                     <div class="inputBx">
-                        <?php echo form_error('username'); ?>
                         <span>Username</span>
-                        <input type="text" class="form-control" name="username" placeholder="Username">
+                        <?php echo form_error('username'); ?>
+                        <input type="text" class="form-control" name="username" placeholder="Username" value="<?php echo set_value('username'); ?>">
                     </div>
                     <div class="inputBx">
-                        <?php echo form_error('fullname'); ?>
                         <span>Fullname</span>
-                        <input type="text" class="form-control" name="fullname" placeholder="Fullname">
+                        <?php echo form_error('fullname'); ?>
+                        <input type="text" class="form-control" name="fullname" placeholder="Fullname" value="<?php echo set_value('fullname'); ?>">
                     </div>
                     <div class="inputBx">
-                        <?php echo form_error('email'); ?>
                         <span>Email</span>
-                        <input type="email" class="form-control" name="email" placeholder="Email">
+                        <?php echo form_error('email'); ?>
+                        <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo set_value('email'); ?>">
                     </div>
                     <div class="inputBx">
-                        <?php echo form_error('jk'); ?>
                         <span>Jenis Kelamin</span>
-                    </div>
-                    <div class="form-check">
-                        <input name="jk" type="radio" class="form-check-input" id="radio_3" value="Pria" />
-                        <label for="radio_3">Pria</label>
-                        <input name="jk" type="radio" id="radio_4" class="with-gap" value="Wanita" />
-                        <label for="radio_4">Wanita</label>
+                        <?php echo form_error('jk'); ?>
+                        <select class="form-control show-tick" name="jk">
+                            <option value="2">Pria</option>
+                            <option value="3">Wanita</option>
+                        </select>
                     </div>
                     <div class="inputBx">
-                        <?php echo form_error('password1'); ?>
                         <span>Password</span>
-                        <input type="password" class="form-control" name="password1" minlength="6" placeholder="Password">
+                        <?php echo form_error('password1'); ?>
+                        <input type="password" class="form-control" name="password1" minlength="6" placeholder="Password" value="<?php echo set_value('password1'); ?>">
                     </div>
                     <div class="inputBx">
-                        <?php echo form_error('password2'); ?>
                         <span>Confirm Password</span>
-                        <input type="password" class="form-control" name="password2" minlength="6" placeholder="Confirm Password">
+                        <?php echo form_error('password2'); ?>
+                        <input type="password" class="form-control" name="password2" minlength="6" placeholder="Confirm Password" value="<?php echo set_value('password2'); ?>">
                     </div>
                     <div class="inputBx">
-                        <?php echo form_error('no_hp'); ?>
                         <span>Telephone Number</span>
-                        <input type="text" class="form-control" name="no_hp" placeholder="No HP">
+                        <?php echo form_error('no_hp'); ?>
+                        <input type="text" class="form-control" name="no_hp" placeholder="No HP" value="<?php echo set_value('no_hp'); ?>">
                     </div>
                     <div class="inputBx">
-                        <?php echo form_error('alamat'); ?>
                         <span>Address</span>
-                        <input type="text" class="form-control" placeholder="Alamat" name="alamat">
-                    </div>
-                    <div class="inputBx">
-                        <?php echo form_error('id_role'); ?>
-                        <span>Role</span>
+                        <?php echo form_error('alamat'); ?>
+                        <input type="text" class="form-control" placeholder="Alamat" name="alamat" value="<?php echo set_value('alamat'); ?>">
                     </div>
                     <div class="inputBx">
                         <span>Role</span>
