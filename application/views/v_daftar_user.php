@@ -30,19 +30,23 @@
                         <?php } ?>
                     </div>
                     <div class="inputBx">
+                        <?php echo form_error('username'); ?>
                         <span>Username</span>
                         <input type="text" class="form-control" name="username" placeholder="Username">
-                        <!-- required autofocus -->
                     </div>
                     <div class="inputBx">
+                        <?php echo form_error('fullname'); ?>
                         <span>Fullname</span>
                         <input type="text" class="form-control" name="fullname" placeholder="Fullname">
-                        <!-- required autofocus -->
                     </div>
                     <div class="inputBx">
+                        <?php echo form_error('email'); ?>
                         <span>Email</span>
                         <input type="email" class="form-control" name="email" placeholder="Email">
-                        <!-- required -->
+                    </div>
+                    <div class="inputBx">
+                        <?php echo form_error('jk'); ?>
+                        <span>Jenis Kelamin</span>
                     </div>
                     <div class="form-check">
                         <input name="jk" type="radio" class="form-check-input" id="radio_3" value="Pria" />
@@ -51,28 +55,32 @@
                         <label for="radio_4">Wanita</label>
                     </div>
                     <div class="inputBx">
+                        <?php echo form_error('password1'); ?>
                         <span>Password</span>
                         <input type="password" class="form-control" name="password1" minlength="6" placeholder="Password">
-                        <!-- required -->
                     </div>
                     <div class="inputBx">
+                        <?php echo form_error('password2'); ?>
                         <span>Confirm Password</span>
                         <input type="password" class="form-control" name="password2" minlength="6" placeholder="Confirm Password">
-                        <!-- required -->
                     </div>
                     <div class="inputBx">
+                        <?php echo form_error('no_hp'); ?>
                         <span>Telephone Number</span>
                         <input type="text" class="form-control" name="no_hp" placeholder="No HP">
-                        <!-- required autofocus -->
                     </div>
                     <div class="inputBx">
+                        <?php echo form_error('alamat'); ?>
                         <span>Address</span>
                         <input type="text" class="form-control" placeholder="Alamat" name="alamat">
                     </div>
                     <div class="inputBx">
+                        <?php echo form_error('id_role'); ?>
+                        <span>Role</span>
+                    </div>
+                    <div class="inputBx">
                         <span>Role</span>
                         <select class="form-control show-tick" name="id_role">
-                            <!-- required -->
                             <option value="2">Customer</option>
                             <option value="3">Owner</option>
                         </select>
