@@ -408,6 +408,7 @@ class Main_Back_User extends CI_Controller
 
 	public function daftar_user()
 	{
+		// $this->load->view('navbar_user');
 		$this->load->view('v_daftar_user');
 	}
 
@@ -417,28 +418,21 @@ class Main_Back_User extends CI_Controller
 		$this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[tb_user.username]', [
 			'is_unique' => 'This username has already taken'
 		]);
-		$this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[3]|matches[password2]');
-		$this->form_validation->set_rules('password2', 'Password', 'required|trim|min_length[3]|matches[password1]');
-		$this->form_validation->set_rules('fullname', 'fullname', 'required|trim');
-		$this->form_validation->set_rules('jk', 'jk', 'required|trim');
+		$this->form_validation->set_rules('fullname', 'Fullname', 'required|trim');
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[tb_user.email]', [
 			'is_unique' => 'This email has already registered'
 		]);
-		$this->form_validation->set_rules('no_hp', 'no_hp', 'required|trim|is_unique[tb_user.no_hp]', [
+		$this->form_validation->set_rules('jk', 'Jenis Kelamin', 'required|trim');
+		$this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[6]|matches[password2]');
+		$this->form_validation->set_rules('password2', 'Password', 'required|trim|min_length[6]|matches[password1]');
+		$this->form_validation->set_rules('no_hp', 'No Hp', 'required|trim|numeric|is_unique[tb_user.no_hp]', [
 			'is_unique' => 'This Nomor Handphone has already taken'
 		]);
-		$this->form_validation->set_rules('alamat', 'alamat', 'required|trim');
-		$this->form_validation->set_rules('id_role', 'id_role', 'required|trim');
+		$this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
+		$this->form_validation->set_rules('id_role', 'Role', 'required|trim');
 
 		if ($this->form_validation->run() == FALSE) {
-			$data['title'] = 'Registration';
-			// $this->load->view('navbar_user');
-			// $this->load->view('v_daftar_user');
-			// $this->load->view('templates/js');
-			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-            Congratulation! Your account has heen created! Please Activate Your Account
-            </div>');
-			redirect('Main_Back_User/daftar_user');
+			$this->load->view('v_daftar_user');;
 		} else {
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
