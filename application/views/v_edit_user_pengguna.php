@@ -34,16 +34,13 @@
       <form method="POST" id="form_edit_user" class="form-horizontal" action="<?php echo site_url('Main_Back_User/proses_update_user') ?>">
 
         <div class="card-profile">
-          <div class="">
-            <!-- <h4>Username :</h4> -->
-            <input type="text" name="username" id="username">
+          <div style="text-align:center; width:100%;">
+            <button type="button" class="btn btn-secondary btn-rounded btn-lg" onclick="location.href='<?php echo base_url('Main_Back_User/data_user/' . $this->session->userdata('id_user')) ?>'">Ubah Foto</button>
           </div>
           <div class="row">
             <input type="hidden" id="id_user" value="<?php echo $u->id_user ?>" name="id_user" required="required">
             <input type="hidden" id="email" value="<?php echo $u->email ?>" name="email" required="required">
-
             <br><br>
-
             <div class="col-md-6" style="float:none;margin:auto">
               <div class="content-profile">
                 <h4>Username :</h4>
@@ -96,7 +93,6 @@
             </div>
           </div>
           <input type="hidden" name="id_role" id="id_role" class="form-control" value="<?php echo $u->id_role ?>" required>
-
 
           <br>
 
