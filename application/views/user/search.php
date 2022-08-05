@@ -70,7 +70,7 @@
         <?php echo form_open('Main_Back_User/filter') ?>
         <div class="form-inline">
           <div class="p-2">
-            <select class="form-control " name="kota">
+            <select class="form-control " name="kota" value="<?php echo set_value('kota'); ?>">
               <option>Kota</option>
               <option value="Jakarta">Jakarta</option>
               <option value="Yogyakarta">Yogyakarta</option>
@@ -79,7 +79,7 @@
             </select>
           </div>
           <div class="p-2">
-            <select class="form-control" name="tipe">
+            <select class="form-control" name="tipe" value="<?php echo set_value('tipe'); ?>">
               <option>Tipe</option>
               <option value="Campur">Campur</option>
               <option value="Putra">Putra</option>

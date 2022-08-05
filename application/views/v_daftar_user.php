@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,6 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
-
 <body>
     <section>
         <div class="imgBx">
@@ -19,7 +17,6 @@
             <div class="formBx">
                 <h1>SevenKos</h1>
                 <h2>Sign up</h2>
-                <!-- <?= validation_errors(); ?> -->
                 <form id="sign_up" method="POST" action="<?php echo base_url() ?>Main_Back_User/proses_daftar_user">
                     <div class="inputBx">
                         <?php if (isset($_GET['error'])) { ?>

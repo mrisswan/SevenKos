@@ -42,7 +42,6 @@
             <input type="hidden" id="id_user" value="<?php echo $u->id_user ?>" name="id_user" required="required">
             <input type="hidden" id="email" value="<?php echo $u->email ?>" name="email" required="required">
 
-
             <br><br>
 
             <div class="col-md-6" style="float:none;margin:auto">
