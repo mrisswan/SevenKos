@@ -88,6 +88,7 @@
           </div>
           <div class="p-2">
             <?php echo form_submit(['name' => 'submit', 'value' => 'Search', 'class' => 'btn btn-success']) ?>
+            <a href="<?php echo base_url() ?>Main_Back_User/semua_kos" class="btn btn-light">Reset</a>
           </div>
         </div>
         <?php echo form_close() ?>

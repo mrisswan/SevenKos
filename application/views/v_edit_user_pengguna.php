@@ -20,7 +20,6 @@
 <body>
   <?php foreach ($user as $u) { ?>
     <div class="container container-profile">
-
       <div class="image-profile">
         <?php if ($jk == 'Pria') { ?>
           <img class="rounded-circle" src="<?php echo base_url() ?>assets/images/avatar male.png" width="150px" alt="User" />
