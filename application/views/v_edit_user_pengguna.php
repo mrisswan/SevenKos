@@ -34,7 +34,15 @@
 
         <div class="card-profile">
           <div style="text-align:center; width:100%;">
-            <button type="button" class="btn btn-secondary btn-rounded btn-lg" onclick="location.href='<?php echo base_url('Main_Back_User/data_user/' . $this->session->userdata('id_user')) ?>'">Ubah Foto</button>
+            <div class="inputBx">
+              <button type="button" class="btn btn-secondary btn-rounded btn-lg">Ubah Foto</button>
+              <!-- onclick="location.href='<?php echo base_url('Main_Back_User/data_user/' . $this->session->userdata('id_user')) ?>'" -->
+              <!-- <span>Upload Profil</span> -->
+              <!-- <label for="image">Upload Gambar</label> -->
+              <div class="form-group">
+                <input type="file" name="foto" accept="image/png, image/gif, image/jpeg">
+              </div>
+            </div>
           </div>
           <div class="row">
             <input type="hidden" id="id_user" value="<?php echo $u->id_user ?>" name="id_user" required="required">
