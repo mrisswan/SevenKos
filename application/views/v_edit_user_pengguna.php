@@ -30,8 +30,7 @@
 
       <br>
 
-      <form method="POST" id="form_edit_user" class="form-horizontal" action="<?php echo site_url('Main_Back_User/proses_update_user') ?>">
-
+        <form method="POST" id="form_edit_user" class="form-horizontal" action="<?php echo site_url('Main_Back_User/proses_update_user') ?>">
         <div class="card-profile">
           <div style="text-align:center; width:100%;">
             <div class="inputBx">
@@ -39,9 +38,9 @@
               <!-- onclick="location.href='<?php echo base_url('Main_Back_User/data_user/' . $this->session->userdata('id_user')) ?>'" -->
               <!-- <span>Upload Profil</span> -->
               <!-- <label for="image">Upload Gambar</label> -->
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <input type="file" name="foto" accept="image/png, image/gif, image/jpeg">
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="row">
@@ -110,7 +109,6 @@
           <br>
       </form>
     </div>
-    </div>
   <?php } ?>
 </body>
 
@@ -178,7 +176,6 @@
     </div>
     <div class="row">
       <div class="col-md-12 text-center">
-
         <p>
           <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
           Copyright &copy;<script>
