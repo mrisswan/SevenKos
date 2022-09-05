@@ -64,7 +64,15 @@
             </div>
 
             <div class="tab-pane fade" id="pills-fasilitas" role="tabpanel" aria-labelledby="pills-fasilitas-tab">
-              <p><?= $deskripsi ?></p>
+              <div class="row">
+                <div class="col-md-12">
+                  <ul class="features">
+                    <?php foreach (json_decode($fasilitas) as $item) { ?>
+                      <li class="check"><span class="fa fa-circle"></span><?php echo $item; ?></li>
+                    <?php } ?>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>

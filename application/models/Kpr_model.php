@@ -10,11 +10,11 @@ class Kpr_model extends CI_Model
 
     public function insert_data($data, $table)
     {
-        $this->db->insert($table, $data);
+        $this->db->insert($data, $table);
     }
-    public function update_data($table, $data, $where)
+    public function update_data($where, $table, $data)
     {
-        $this->db->update($table, $data, $where);
+        $this->db->update($where, $table, $data);
     }
 
     public function detail($id)
@@ -114,17 +114,17 @@ class Kpr_model extends CI_Model
 
         return $this->db->query(" SELECT * FROM rumah WHERE kode_type = 'SCLS' ")->result();
     }
-    
-	public function cek_baca_user($id_customer)
+
+    public function cek_baca_user($id_customer)
     {
 
         return $this->db->query(" SELECT * FROM tb_berita join tb_status_berita on tb_berita.id_berita=tb_status_berita.id_berita WHERE tb_status_berita.status_baca = 0 AND id_customer='$id_customer'   ")->num_rows();
     }
-	public function getBacaBerita($id_customer)
-	{
-		return $this->db->query(" SELECT * FROM tb_status_berita WHERE id_customer='$id_customer' ")->result();
-	}
-	public function getbaca()
+    public function getBacaBerita($id_customer)
+    {
+        return $this->db->query(" SELECT * FROM tb_status_berita WHERE id_customer='$id_customer' ")->result();
+    }
+    public function getbaca()
     {
 
         return $this->db->query(" SELECT * FROM tb_berita order by id_berita")->result();

@@ -654,12 +654,14 @@ class Main_Back_User extends CI_Controller
 			'no_hp'				=> $data_kos[0]['no_hp'],
 			'fullname'			=> $data_kos[0]['fullname'],
 			'tipe'				=> $data_kos[0]['tipe'],
+			'fasilitas'			=> $data_kos[0]['fasilitas'],
 			'image_header'		=> $data_kos[0]['image_header']
 		);
 
 		if (!$sudah_login) { // jika $sudah_login == false atau belum login maka akan kembali ke redirect yang di tuju
 			redirect(base_url('Login'));
 		} else {
+			// echo var_dump($data_kos);
 			$this->load->view('navbar_user');
 			$this->load->view('user/detail_kos', $data2, $data);
 		}

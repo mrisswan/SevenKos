@@ -111,6 +111,7 @@ class Dashboard_Admin extends CI_Controller
 			$id_kos 	= $this->input->post('id_kos');
 			$nama 		= $this->input->post('nama');
 			$tipe		= $this->input->post('tipe');
+			$fasilitas		= $this->input->post('fasilitas');
 			$deskripsi	= $this->input->post('deskripsi');
 			$alamat		= $this->input->post('alamat');
 			$kota		= $this->input->post('kota');
@@ -134,7 +135,7 @@ class Dashboard_Admin extends CI_Controller
 					$config['encrypt_name'] = false;
 					$config['max_width']  = '';
 					$config['max_height']  = '';
-					$this->load->library('upload', 'image_lib', $config);
+					$this->load->library('upload', $config);
 					$this->upload->initialize($config);
 					if (!$this->upload->do_upload('image_header')) {
 						print_r('Ukuran File Terlalu Besar. Maksimal 2Mb');
@@ -157,6 +158,7 @@ class Dashboard_Admin extends CI_Controller
 					'slug'		=> $slug,
 					'nama'		=> $nama,
 					'tipe'		=> $tipe,
+					'fasilitas'		=> json_encode($fasilitas),
 					'deskripsi' 	=> $deskripsi,
 					'alamat'		=> $alamat,
 					'kota'		=> $kota,
@@ -205,6 +207,7 @@ class Dashboard_Admin extends CI_Controller
 					'slug'		=> $slug,
 					'nama'		=> $nama,
 					'tipe'		=> $tipe,
+					'fasilitas'		=> json_encode($fasilitas),
 					'deskripsi' 	=> $deskripsi,
 					'alamat'		=> $alamat,
 					'kota'		=> $kota,
@@ -235,15 +238,15 @@ class Dashboard_Admin extends CI_Controller
 			'status'	=> '',
 			'slug'		=> '',
 			'nama'		=> '',
-			'image'		=> '',
+			'image_header'		=> '',
 			'tipe'		=> '',
+			'fasilitas'		=> '',
 			'deskripsi' => '',
 			'alamat'	=> '',
 			'kota'		=> '',
 			'harga'		=> '',
 			'sisa_kamar' => '',
 			'stat'		=> 'new',
-
 		);
 
 		if (!$sudah_login) { // jika $sudah_login == false atau belum login maka akan kembali ke redirect yang di tuju
@@ -258,8 +261,9 @@ class Dashboard_Admin extends CI_Controller
 	{
 		date_default_timezone_set('Asia/Jakarta');
 		$nama = $this->input->post('nama');
-		$image = $this->input->post('image');
+		// $image_header = $this->input->post('image_header');
 		$tipe = $this->input->post('tipe');
+		$fasilitas = $this->input->post('fasilitas');
 		$alamat = $this->input->post('alamat');
 		$deskripsi = $this->input->post('deskripsi');
 		$kota = $this->input->post('kota');
@@ -267,16 +271,18 @@ class Dashboard_Admin extends CI_Controller
 		$sisa_kamar = $this->input->post('sisa_kamar');
 		$status = $this->input->post('status');
 		$id = $this->input->post('id_kos');
+
 		$date 			= date('Y-m-d H:i:s');
 		$time 			= date('H:i:s');
 
 		$data = array(
-			'status' => $status,
-			'date' => $date,
-			'time' => $time,
-
+			'status' 	=> $status,
+			'date' 		=> $date,
+			'time' 		=> $time,
+			// 'image_header'		=> $image_header,
 			'nama'		=> $nama,
 			'tipe'		=> $tipe,
+			'fasilitas'		=> json_encode($fasilitas),
 			'deskripsi' => $deskripsi,
 			'alamat'	=> $alamat,
 			'kota'		=> $kota,
@@ -287,6 +293,8 @@ class Dashboard_Admin extends CI_Controller
 		$where = array(
 			'id_kos' => $id
 		);
+
+		// var_dump($harga);
 
 		$this->User_model->update_data_user($where, $data, 'tbl_kos');
 		redirect('Dashboard_Admin/view_kos');

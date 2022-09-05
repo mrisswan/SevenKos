@@ -204,42 +204,29 @@
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                     <div class="form-group">
-                                        <!-- <div class="form-line">
-                                            <textarea rows="4" name="fasilitas" class="form-control no-resize" placeholder="Deskripsikan kosanmu dengan jelas..." required></textarea>
-                                        </div> -->
-                                        <div class="form-check">
-                                            <!-- <label class="checkbox-inline"><input type="checkbox" value="">Option 1</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Option 2</label>
-                                            <label class="checkbox-inline"><input type="checkbox" value="">Option 3</label> -->
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                                <label class="custom-control-label" for="customCheck1">Kasur</label>
-                                                <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                                <label class="custom-control-label" for="customCheck2">Lemari Baju</label>
-                                                <input type="checkbox" class="custom-control-input" id="customCheck3">
-                                                <label class="custom-control-label" for="customCheck3">Kursi</label>
-                                                <input type="checkbox" class="custom-control-input" id="customCheck4">
-                                                <label class="custom-control-label" for="customCheck4">Bantal</label>
-                                                <input type="checkbox" class="custom-control-input" id="customCheck5">
-                                                <label class="custom-control-label" for="customCheck5">Jendela</label>
-                                                <input type="checkbox" class="custom-control-input" id="customCheck6">
-                                                <label class="custom-control-label" for="customCheck6">Meja</label>
-                                                <input type="checkbox" class="custom-control-input" id="customCheck7">
-                                                <label class="custom-control-label" for="customCheck7">Ventilasi</label>
-                                                <input type="checkbox" class="custom-control-input" id="customCheck8">
-                                                <label class="custom-control-label" for="customCheck8">Kipas Angin</label>
-                                                <input type="checkbox" class="custom-control-input" id="customCheck9">
-                                                <label class="custom-control-label" for="customCheck9">Guling</label>
-                                                <input type="checkbox" class="custom-control-input" id="customCheck10">
-                                                <label class="custom-control-label" for="customCheck10">Cermin</label>
-                                                <input type="checkbox" class="custom-control-input" id="customCheck11">
-                                                <label class="custom-control-label" for="customCheck11">Kamar Mandi</label>
-                                            </div>
-                                            <!-- <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                            <label class="form-check-label" for="gridCheck1">
-                                                Kamar
-                                            </label>
-                                            </input> -->
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="fasilitas1" name="fasilitas[]" value="Kasur">
+                                            <label class="custom-control-label" for="fasilitas1">Kasur</label>
+                                            <input type="checkbox" class="custom-control-input" id="fasilitas2" name="fasilitas[]" value="Lemari Baju">
+                                            <label class="custom-control-label" for="fasilitas2">Lemari Baju</label>
+                                            <input type="checkbox" class="custom-control-input" id="fasilitas3" name="fasilitas[]" value="Kursi">
+                                            <label class="custom-control-label" for="fasilitas3">Kursi</label>
+                                            <input type="checkbox" class="custom-control-input" id="fasilitas4" name="fasilitas[]" value="Bantal">
+                                            <label class="custom-control-label" for="fasilitas4">Bantal</label>
+                                            <input type="checkbox" class="custom-control-input" id="fasilitas5" name="fasilitas[]" value="Jendela">
+                                            <label class="custom-control-label" for="fasilitas5">Jendela</label>
+                                            <input type="checkbox" class="custom-control-input" id="fasilitas6" name="fasilitas[]" value="Meja">
+                                            <label class="custom-control-label" for="fasilitas6">Meja</label>
+                                            <input type="checkbox" class="custom-control-input" id="fasilitas7" name="fasilitas[]" value="Ventilasi">
+                                            <label class="custom-control-label" for="fasilitas7">Ventilasi</label>
+                                            <input type="checkbox" class="custom-control-input" id="fasilitas8" name="fasilitas[]" value="Kipas Angin">
+                                            <label class="custom-control-label" for="fasilitas8">Kipas Angin</label>
+                                            <input type="checkbox" class="custom-control-input" id="fasilitas9" name="fasilitas[]" value="Guling">
+                                            <label class="custom-control-label" for="fasilitas9">Guling</label>
+                                            <input type="checkbox" class="custom-control-input" id="fasilitas10" name="fasilitas[]" value="Cermin">
+                                            <label class="custom-control-label" for="fasilitas10">Cermin</label>
+                                            <input type="checkbox" class="custom-control-input" id="fasilitas11" name="fasilitas[]" value="Kamar Mandi">
+                                            <label class="custom-control-label" for="fasilitas11">Kamar Mandi</label>
                                         </div>
                                     </div>
                                 </div>
