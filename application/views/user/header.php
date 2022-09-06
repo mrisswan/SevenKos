@@ -150,145 +150,115 @@
 				<div class="carousel-properties owl-carousel">
 					<div class="item">
 						<div class="property-wrap ftco-animate">
-							<a href="#" class="img" style="background-image: url(file/kos_image/1.jpg);">
+							<a href="#" class="img" style="background-image: url(file/kos_image/19.jpg);">
 								<div class="rent-sale">
-									<span class="sale">Sale</span>
+									<span class="rent">Campur</span>
 								</div>
-								<p class="price"><span class="orig-price">$300,000</span></p>
+								<p class="price"><span class="orig-price">Rp. 2.700.000<small> / bulan</small></span></p>
 							</a>
 							<div class="text">
-								<ul class="property_list">
-									<li><span class="flaticon-bed"></span>3</li>
-									<li><span class="flaticon-bathtub"></span>2</li>
-									<li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
-								</ul>
-								<h3><a href="#">The Blue Sky Home</a></h3>
-								<span class="location">Oakland</span>
+								<h3><a href="#">Kost Tian Jalan Pagarsih No. 78</a></h3>
+								<span class="location">Jakarta</span>
 								<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
 									<span class="fa fa-link"></span>
 								</a>
 								<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
 									<div class="d-flex align-items-center">
 										<div class="img" style="background-image: url(images/person_1.jpg);"></div>
-										<h3 class="ml-2">John Dorf</h3>
 									</div>
-									<span class="text-right">2 weeks ago</span>
+									<span class="text-right">2017-07-12</span>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="item">
 						<div class="property-wrap ftco-animate">
-							<a href="#" class="img" style="background-image: url(../file/kos_image/2.jpg);">
+							<a href="#" class="img" style="background-image: url(file/kos_image/20.jpg);">
 								<div class="rent-sale">
-									<span class="rent">Rent</span>
+									<span class="rent">Putri</span>
 								</div>
-								<p class="price"><span class="old-price">800,000</span><span class="orig-price">$3,050<small> / mo</small></span></p>
+								<p class="price"><span class="orig-price">Rp. 2.000.000<small> / bulan</small></span></p>
 							</a>
 							<div class="text">
-								<ul class="property_list">
-									<li><span class="flaticon-bed"></span>3</li>
-									<li><span class="flaticon-bathtub"></span>2</li>
-									<li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
-								</ul>
-								<h3><a href="#">The Blue Sky Home</a></h3>
-								<span class="location">Oakland</span>
+								<h3><a href="#">Kost Light Home Sukajadi</a></h3>
+								<span class="location">Jakarta</span>
 								<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
 									<span class="fa fa-link"></span>
 								</a>
 								<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
 									<div class="d-flex align-items-center">
 										<div class="img" style="background-image: url(images/person_1.jpg);"></div>
-										<h3 class="ml-2">John Dorf</h3>
 									</div>
-									<span class="text-right">2 weeks ago</span>
+									<span class="text-right">2017-07-12</span>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="item">
 						<div class="property-wrap ftco-animate">
-							<a href="#" class="img" style="background-image: url(../file/kos_image/3.jpg);">
+							<a href="#" class="img" style="background-image: url(file/kos_image/14.jpg);">
 								<div class="rent-sale">
-									<span class="rent">Rent</span>
+									<span class="rent">Putri</span>
 								</div>
-								<p class="price"><span class="orig-price">$300<small> / mo</small></span></p>
+								<p class="price"><span class="orig-price">Rp. 1.700.000<small> / bulan</small></span></p>
 							</a>
 							<div class="text">
-								<ul class="property_list">
-									<li><span class="flaticon-bed"></span>3</li>
-									<li><span class="flaticon-bathtub"></span>2</li>
-									<li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
-								</ul>
-								<h3><a href="#">The Blue Sky Home</a></h3>
-								<span class="location">Oakland</span>
+								<h3><a href="#">Kost Terusan Ciheulang No. 235 B Type A Coblong</a></h3>
+								<span class="location">Jakarta</span>
 								<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
 									<span class="fa fa-link"></span>
 								</a>
 								<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
 									<div class="d-flex align-items-center">
 										<div class="img" style="background-image: url(images/person_1.jpg);"></div>
-										<h3 class="ml-2">John Dorf</h3>
 									</div>
-									<span class="text-right">2 weeks ago</span>
+									<span class="text-right">2017-07-12</span>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="item">
 						<div class="property-wrap ftco-animate">
-							<a href="#" class="img" style="background-image: url(images/work-4.jpg);">
+							<a href="#" class="img" style="background-image: url(file/kos_image/6.jpg);">
 								<div class="rent-sale">
-									<span class="rent">Rent</span>
+									<span class="rent">Putra</span>
 								</div>
-								<p class="price"><span class="orig-price">$300<small> / mo</small></span></p>
+								<p class="price"><span class="orig-price">Rp. 1.500.000<small> / bulan</small></span></p>
 							</a>
 							<div class="text">
-								<ul class="property_list">
-									<li><span class="flaticon-bed"></span>3</li>
-									<li><span class="flaticon-bathtub"></span>2</li>
-									<li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
-								</ul>
-								<h3><a href="#">The Blue Sky Home</a></h3>
-								<span class="location">Oakland</span>
+								<h3><a href="#">Kost Pondok Mars Barat III No. 8 Tipe B Rancasari</a></h3>
+								<span class="location">Yogyakarta</span>
 								<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
 									<span class="fa fa-link"></span>
 								</a>
 								<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
 									<div class="d-flex align-items-center">
 										<div class="img" style="background-image: url(images/person_1.jpg);"></div>
-										<h3 class="ml-2">John Dorf</h3>
 									</div>
-									<span class="text-right">2 weeks ago</span>
+									<span class="text-right">2017-07-12</span>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="item">
 						<div class="property-wrap ftco-animate">
-							<a href="#" class="img" style="background-image: url(images/work-5.jpg);">
+							<a href="#" class="img" style="background-image: url(file/kos_image/17.jpg);">
 								<div class="rent-sale">
-									<span class="rent">Rent</span>
+									<span class="rent">Campur</span>
 								</div>
-								<p class="price"><span class="orig-price">$300<small> / mo</small></span></p>
+								<p class="price"><span class="orig-price">Rp. 1.500.000<small> / bulan</small></span></p>
 							</a>
 							<div class="text">
-								<ul class="property_list">
-									<li><span class="flaticon-bed"></span>3</li>
-									<li><span class="flaticon-bathtub"></span>2</li>
-									<li><span class="flaticon-floor-plan"></span>1,878 sqft</li>
-								</ul>
-								<h3><a href="#">The Blue Sky Home</a></h3>
-								<span class="location">Oakland</span>
+								<h3><a href="#">Kost Nur House</a></h3>
+								<span class="location">Yogyakarta</span>
 								<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
 									<span class="fa fa-link"></span>
 								</a>
 								<div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
 									<div class="d-flex align-items-center">
 										<div class="img" style="background-image: url(images/person_1.jpg);"></div>
-										<h3 class="ml-2">John Dorf</h3>
 									</div>
-									<span class="text-right">2 weeks ago</span>
+									<span class="text-right">2017-07-12</span>
 								</div>
 							</div>
 						</div>
@@ -415,32 +385,32 @@
 			<div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
 				<div class="block-18 py-5 mb-4">
 					<div class="text text-border d-flex align-items-center">
-						<strong class="number" data-number="1000">0</strong>
-						<span>Area <br>Population</span>
+						<strong class="number"><?= $jumlahkos ?></strong>
+						<span>Kos <br>Terdaftar</span>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
 				<div class="block-18 py-5 mb-4">
 					<div class="text text-border d-flex align-items-center">
-						<strong class="number" data-number="2500">0</strong>
-						<span>Total <br>Properties</span>
+						<strong class="number"><?= $jumlahuser ?></strong>
+						<span>User <br>Terdaftar</span>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
 				<div class="block-18 py-5 mb-4">
 					<div class="text text-border d-flex align-items-center">
-						<strong class="number" data-number="500">0</strong>
-						<span>Average <br>House</span>
+						<strong class="number"><?= $jumlahsewa ?></strong>
+						<span>Sewa <br>Berlangsung</span>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
 				<div class="block-18 py-5 mb-4">
 					<div class="text d-flex align-items-center">
-						<strong class="number" data-number="67">0</strong>
-						<span>Total <br>Branches</span>
+						<strong class="number"><?= $jumlahrequest ?></strong>
+						<span>Request <br>Berlangsung</span>
 					</div>
 				</div>
 			</div>

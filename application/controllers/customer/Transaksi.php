@@ -21,21 +21,21 @@ class Transaksi extends CI_Controller
         $data['transaksi'] = $this->db->query(" SELECT * FROM transaksi tr, tbl_kos kos, tb_user user WHERE tr.id_kos=kos.id_kos AND tr.id_user=user.id_user AND user.id_user='$user' ORDER BY id_booking DESC")->result();
 
         $data['jk'] = $this->session->userdata('jk');
-	    $data['id_role'] = $this->session->userdata('id_role');
-	    $data['username'] = $this->session->userdata('username');
-	    $data['email'] = $this->session->userdata('email');
-	    $data['id_user'] = $this->session->userdata('id_user');
-	    $data['fullname'] = strtoupper($this->session->userdata('fullname'));
-        $this->load->view('navbar_user',$data);
+        $data['id_role'] = $this->session->userdata('id_role');
+        $data['username'] = $this->session->userdata('username');
+        $data['email'] = $this->session->userdata('email');
+        $data['id_user'] = $this->session->userdata('id_user');
+        $data['fullname'] = strtoupper($this->session->userdata('fullname'));
+        $this->load->view('navbar_user', $data);
         $this->load->view('customer/data_transaksi', $data);
+        $this->load->view('footer');
     }
 
     public function pembayaran($id)
     {
         $data['transaksi'] = $this->db->query(" SELECT * FROM transaksi tr, tbl_kos kos, tb_user user WHERE tr.id_kos=kos.id_kos AND tr.id_user=user.id_user AND tr.id_booking='$id' ORDER BY id_booking DESC")->result();
-        $this->load->view('navbar_user',$data);
+        $this->load->view('navbar_user', $data);
         $this->load->view('customer/pembayaran', $data);
-
     }
     public function pembayaran_aksi()
     {
@@ -43,7 +43,7 @@ class Transaksi extends CI_Controller
         $bukti_pembayaran = $_FILES['bukti_pembayaran']['name'];
 
         if ($bukti_pembayaran)
-        $config['upload_path'] = 'file/kos_image';
+            $config['upload_path'] = 'file/kos_image';
         $config['allowed_types'] = 'jpg|jpeg|png';
         $config['max_size'] = '100000000';
         $config['min_size'] = '0';

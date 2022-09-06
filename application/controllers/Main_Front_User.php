@@ -17,9 +17,20 @@ class Main_Front_User extends CI_Controller
 		$config['per_page'] = 3;
 
 		$data['sql'] = $this->User_model->info_beberapa_kos();
+		$jumlahkos = $this->User_model->getJumlahKos()->num_rows();
+		$jumlahuser = $this->User_model->getJumlahUser()->num_rows();
+		$jumlahsewa = $this->User_model->getJumlahSewa()->num_rows();
+		$jumlahrequest = $this->User_model->getJumlahRequest()->num_rows();
+
+		$data2 = array(
+			'jumlahkos' => $jumlahkos,
+			'jumlahuser' => $jumlahuser,
+			'jumlahsewa' => $jumlahsewa,
+			'jumlahrequest' => $jumlahrequest
+		);
 
 		$this->load->view('navbar');
-		$this->load->view('user/header', $data);
+		$this->load->view('user/header', $data2);
 		$this->load->view('footer');
 		// $this->load->view('user/index',$data);
 	}
@@ -57,6 +68,7 @@ class Main_Front_User extends CI_Controller
 
 		$this->load->view('navbar');
 		$this->load->view('user/kos', $data);
+		$this->load->view('user/footer');
 	}
 
 
@@ -96,6 +108,7 @@ class Main_Front_User extends CI_Controller
 
 		$this->load->view('navbar');
 		$this->load->view('user/jakarta', $data);
+		$this->load->view('user/footer');
 	}
 
 	public function kos_yogyakarta()
@@ -104,6 +117,7 @@ class Main_Front_User extends CI_Controller
 
 		$this->load->view('navbar');
 		$this->load->view('user/yogyakarta', $data);
+		$this->load->view('user/footer');
 	}
 
 	public function kos_surabaya()
@@ -112,6 +126,7 @@ class Main_Front_User extends CI_Controller
 
 		$this->load->view('navbar');
 		$this->load->view('user/surabaya', $data);
+		$this->load->view('user/footer');
 	}
 
 	public function view_konten_kos($slug = '')
@@ -133,12 +148,14 @@ class Main_Front_User extends CI_Controller
 			'fullname'			=> $data_kos[0]['fullname'],
 			'harga'				=> $data_kos[0]['harga'],
 			'tipe'				=> $data_kos[0]['tipe'],
+			'fasilitas'			=> $data_kos[0]['fasilitas'],
 			'image_header'		=> $data_kos[0]['image_header']
 		);
 
 		// $this->load->view('user/header',$data);
 		$this->load->view('navbar');
 		$this->load->view('user/detail_kos', $data);
+		$this->load->view('user/footer');
 		// $this->load->view('footer');
 	}
 
@@ -149,6 +166,7 @@ class Main_Front_User extends CI_Controller
 		$this->load->view('navbar', $data);
 		// $this->load->view('user/menu');
 		$this->load->view('user/kos', $data);
+		$this->load->view('user/footer');
 		//   $this->load->view('footer');
 	}
 
@@ -160,5 +178,39 @@ class Main_Front_User extends CI_Controller
 		$data['sql'] = $this->User_model->filter($kota, $tipe)->result();
 		$this->load->view('navbar', $data);
 		$this->load->view('user/kos', $data);
+		$this->load->view('user/footer');
+	}
+
+	public function about_us()
+	{
+		$jumlahkos = $this->User_model->getJumlahKos()->num_rows();
+		$jumlahuser = $this->User_model->getJumlahUser()->num_rows();
+		$jumlahsewa = $this->User_model->getJumlahSewa()->num_rows();
+		$jumlahrequest = $this->User_model->getJumlahRequest()->num_rows();
+
+		$data2 = array(
+			'jumlahkos' => $jumlahkos,
+			'jumlahuser' => $jumlahuser,
+			'jumlahsewa' => $jumlahsewa,
+			'jumlahrequest' => $jumlahrequest
+		);
+
+		$this->load->view('navbar');
+		$this->load->view('user/about_us', $data2);
+		$this->load->view('user/footer');
+	}
+
+	public function services()
+	{
+		$this->load->view('navbar');
+		$this->load->view('user/services');
+		$this->load->view('user/footer');
+	}
+
+	public function contact()
+	{
+		$this->load->view('navbar');
+		$this->load->view('user/contact');
+		$this->load->view('user/footer');
 	}
 }
