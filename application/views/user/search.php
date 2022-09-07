@@ -98,20 +98,19 @@
 
       <div class="row ftco-animate">
         <?php foreach ($sql as $kos) : ?>
+
           <div class="item" style="width:352px; margin: 2rem;">
             <div class="property-wrap ftco-animate">
               <img src="<?php echo base_url(); ?>file/kos_image/<?= $kos->image_header ?>" width="352px">
-              <div class="rent-sale">
-                <span class="rent"><?= $kos->tipe ?></span>
-              </div>
-              <p class="price"><span class="orig-price">Rp. <?= $this->cart->format_number($kos->harga); ?><small> / bulan</small></span></p>
-              </a>
-              <button type="button" class="btn btn-success btn-rounded" style="margin-left: 18em">
+              <br><br>
+              <button type="button" class="btn btn-success btn-rounded" style="margin-left: 2em">
                 <?php
-                if ($kos->status == '1') {
-                  echo 'Tersedia';
-                } elseif ($kos->status == '0') {
-                  echo 'Penuh';
+                if ($kos->tipe == 'Campur') {
+                  echo 'Campur';
+                } elseif ($kos->tipe == 'Putra') {
+                  echo 'Putra';
+                } elseif ($kos->tipe == 'Putri') {
+                  echo 'Putri';
                 } ?>
               </button>
               <div class="text">
@@ -119,6 +118,9 @@
                     <?= $kos->nama ?></a>
                 </h3>
                 <span class="location"><?= $kos->alamat ?></span>
+                <br><br>
+                <h3 class="text-success">Tersedia <?= $kos->sisa_kamar ?> kamar</h3>
+                <h3><b><span>Rp. <?= $this->cart->format_number($kos->harga); ?><small> / bulan</small></span></b></h3>
                 <div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
                   <div class="d-flex align-items-center">
                     <div class="img" style="background-image: url(images/person_1.jpg);"></div>
@@ -126,7 +128,9 @@
                   <span class="text-right"><?= $kos->date ?></span>
                 </div>
                 <?php if ($this->session->userdata('username')) { ?>
+
                   <a href=" <?= base_url('transaksi/sewa/tambah_sewa/' . $kos->id_kos); ?> " class="btn btn-warning  ml-1 ">Sewa</a>
+
                 <?php } else { ?>
                   <a href=" <?= base_url('transaksi/sewa/tambah_sewa/' . $rm->id_kos); ?> " class="btn btn-warning  ml-1 ">Sewa</a>
                 <?php } ?>
@@ -138,79 +142,6 @@
       <?= $this->pagination->create_links(); ?>
     </div>
   </section>
-
-  <footer class="ftco-footer ftco-section">
-    <div class="container">
-      <div class="row mb-5">
-        <div class="col-md">
-          <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">Ecoverde</h2>
-            <p>Far far away, behind the word mountains, far from the countries.</p>
-            <ul class="ftco-footer-social list-unstyled mt-5">
-              <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
-              <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
-              <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md">
-          <div class="ftco-footer-widget mb-4 ml-md-4">
-            <h2 class="ftco-heading-2">Community</h2>
-            <ul class="list-unstyled">
-              <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Search Properties</a></li>
-              <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>For Agents</a></li>
-              <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Reviews</a></li>
-              <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>FAQs</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md">
-          <div class="ftco-footer-widget mb-4 ml-md-4">
-            <h2 class="ftco-heading-2">About Us</h2>
-            <ul class="list-unstyled">
-              <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Our Story</a></li>
-              <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Meet the team</a></li>
-              <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Careers</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md">
-          <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">Company</h2>
-            <ul class="list-unstyled">
-              <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About Us</a></li>
-              <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Press</a></li>
-              <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
-              <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Careers</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md">
-          <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">Have a Questions?</h2>
-            <div class="block-23 mb-3">
-              <ul>
-                <li><span class="icon fa fa-map"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-                <li><a href="#"><span class="icon fa fa-envelope pr-4"></span><span class="text">info@yourdomain.com</span></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>
-              document.write(new Date().getFullYear());
-            </script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          </p>
-        </div>
-      </div>
-    </div>
-  </footer>
 
   <script type="text/javascript">
     var table;

@@ -24,12 +24,23 @@ class Main_Back_User extends CI_Controller
 		$data['username'] = $this->session->userdata('username');
 		$data['email'] = $this->session->userdata('email');
 		$data['fullname'] = strtoupper($this->session->userdata('fullname'));
+		$jumlahkos = $this->User_model->getJumlahKos()->num_rows();
+		$jumlahuser = $this->User_model->getJumlahUser()->num_rows();
+		$jumlahsewa = $this->User_model->getJumlahSewa()->num_rows();
+		$jumlahrequest = $this->User_model->getJumlahRequest()->num_rows();
+
+		$data2 = array(
+			'jumlahkos' => $jumlahkos,
+			'jumlahuser' => $jumlahuser,
+			'jumlahsewa' => $jumlahsewa,
+			'jumlahrequest' => $jumlahrequest
+		);
 
 		if (!$sudah_login) { // jika $sudah_login == false atau belum login maka akan kembali ke redirect yang di tuju
 			redirect(base_url('Login'));
 		} else {
 			$this->load->view('navbar_user');
-			$this->load->view('user/header_user', $data);
+			$this->load->view('user/header_user', $data2);
 			$this->load->view('footer');
 			//   $this->load->view('index');
 		}
@@ -96,6 +107,7 @@ class Main_Back_User extends CI_Controller
 			// $this->load->view('header',$data);
 			$this->load->view('navbar_user', $data);
 			$this->load->view('view_profile', $data);
+			$this->load->view('footer');
 		}
 	}
 
@@ -116,6 +128,7 @@ class Main_Back_User extends CI_Controller
 			$this->load->view('navbar_user', $data);
 			// $this->load->view('menu_user');
 			$this->load->view('v_edit_user_pengguna');
+			$this->load->view('footer');
 		}
 	}
 
@@ -505,6 +518,7 @@ class Main_Back_User extends CI_Controller
 		} else {
 			$this->load->view('navbar_user', $data);
 			$this->load->view('user/search', $data);
+			$this->load->view('user/footer');
 		}
 	}
 
@@ -587,6 +601,7 @@ class Main_Back_User extends CI_Controller
 		} else {
 			$this->load->view('navbar_user');
 			$this->load->view('user/jakarta_user', $data);
+			$this->load->view('user/footer');
 		}
 	}
 
@@ -606,6 +621,7 @@ class Main_Back_User extends CI_Controller
 		} else {
 			$this->load->view('navbar_user');
 			$this->load->view('user/yogyakarta_user', $data);
+			$this->load->view('user/footer');
 		}
 	}
 
@@ -625,6 +641,7 @@ class Main_Back_User extends CI_Controller
 		} else {
 			$this->load->view('navbar_user');
 			$this->load->view('user/surabaya_user', $data);
+			$this->load->view('user/footer');
 		}
 	}
 
@@ -664,6 +681,7 @@ class Main_Back_User extends CI_Controller
 			// echo var_dump($data_kos);
 			$this->load->view('navbar_user');
 			$this->load->view('user/detail_kos', $data2, $data);
+			$this->load->view('user/footer');
 		}
 	}
 
@@ -675,6 +693,7 @@ class Main_Back_User extends CI_Controller
 		$this->load->view('navbar_user', $data);
 		// $this->load->view('user/menu');
 		$this->load->view('user/search', $data);
+		$this->load->view('user/footer');
 		//   $this->load->view('footer');
 	}
 
@@ -685,5 +704,6 @@ class Main_Back_User extends CI_Controller
 		$data['sql'] = $this->User_model->filter($kota, $tipe)->result();
 		$this->load->view('navbar', $data);
 		$this->load->view('user/search', $data);
+		$this->load->view('user/footer');
 	}
 }

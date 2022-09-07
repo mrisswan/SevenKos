@@ -90,20 +90,19 @@
 
       <div class="row ftco-animate">
         <?php foreach ($sql as $kos) : ?>
+
           <div class="item" style="width:352px; margin: 2rem;">
             <div class="property-wrap ftco-animate">
               <img src="<?php echo base_url(); ?>file/kos_image/<?= $kos->image_header ?>" width="352px">
-              <div class="rent-sale">
-                <span class="rent"><?= $kos->tipe ?></span>
-              </div>
-              <p class="price"><span class="orig-price">Rp. <?= $this->cart->format_number($kos->harga); ?><small> / bulan</small></span></p>
-              </a>
-              <button type="button" class="btn btn-success btn-rounded" style="margin-left: 18em">
+              <br><br>
+              <button type="button" class="btn btn-success btn-rounded" style="margin-left: 2em">
                 <?php
-                if ($kos->status == '1') {
-                  echo 'Tersedia';
-                } elseif ($kos->status == '0') {
-                  echo 'Penuh';
+                if ($kos->tipe == 'Campur') {
+                  echo 'Campur';
+                } elseif ($kos->tipe == 'Putra') {
+                  echo 'Putra';
+                } elseif ($kos->tipe == 'Putri') {
+                  echo 'Putri';
                 } ?>
               </button>
               <div class="text">
@@ -111,6 +110,9 @@
                     <?= $kos->nama ?></a>
                 </h3>
                 <span class="location"><?= $kos->alamat ?></span>
+                <br><br>
+                <h3 class="text-success">Tersedia <?= $kos->sisa_kamar ?> kamar</h3>
+                <h3><b><span>Rp. <?= $this->cart->format_number($kos->harga); ?><small> / bulan</small></span></b></h3>
                 <div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
                   <div class="d-flex align-items-center">
                     <div class="img" style="background-image: url(images/person_1.jpg);"></div>
