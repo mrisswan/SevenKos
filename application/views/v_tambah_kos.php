@@ -234,15 +234,20 @@
 
 						<br>
 						<div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+							<a href="<?php echo base_url('Dashboard_Admin/view_kos') ?>">
+								<button type="button" class="btn btn-danger waves-effect">Cancel</button>
+							</a>
+						</div>
+						<!-- <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
 							<a href="<?php echo base_url('User/data_kos/' . $this->session->userdata('id_user')) ?>">
 								<button type="button" class="btn btn-danger waves-effect">Cancel</button>
 							</a>
 							<div>
 							</div>
 							</form>
-							<!-- #END# Horizontal Layout -->
+							#END# Horizontal Layout
 
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>

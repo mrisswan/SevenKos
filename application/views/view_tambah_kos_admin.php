@@ -411,6 +411,12 @@
                                 <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
                                     <input type="submit" class="btn btn-primary m-t-15 waves-effect" value="Submit">
                                 </div>
+                                <br>
+                                <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                                    <a href="<?php echo base_url('Dashboard_Admin/view_kos') ?>">
+                                        <button type="button" class="btn btn-danger waves-effect">Cancel</button>
+                                    </a>
+                                </div>
                             </div>
                         </form>
                     </div>
