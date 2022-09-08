@@ -41,7 +41,7 @@
           <h2 class="ftco-heading-2">Have a Questions?</h2>
           <div class="block-23 mb-3">
             <ul>
-              <li><span class="icon fa fa-map"></span><span class="text">Karangjambe, Gg. Arjuna No.59, Jaranan, Banguntapan, Kec. Banguntapan, Kabupaten Bantul, Daerah Istimewa Yogyakarta 55198</span></li>
+              <li><a href="#"><span class="icon fa fa-map"></span><span class="text">Karangjambe, Gg. Arjuna No.59, Jaranan, Banguntapan, Kec. Banguntapan, Kabupaten Bantul, Daerah Istimewa Yogyakarta 55198</span></a></li>
               <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">(0274) 4534571</span></a></li>
               <li><a href="#"><span class="icon fa fa-envelope pr-4"></span><span class="text">cs@sevenkos.com</span></a></li>
             </ul>
