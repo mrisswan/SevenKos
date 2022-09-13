@@ -279,21 +279,21 @@
 		</div>
 		<div class="row">
 			<div class="col-md-4">
-				<a href="<?php echo base_url() ?>Main_Front_User/kos_jakarta" class="search-place img" style="background-image: url(asset/images/jakarta.jpg);">
+				<a href="<?php echo base_url() ?>Main_Back_User/kos_jakarta" class="search-place img" style="background-image: url(asset/images/jakarta.jpg);">
 					<div class="desc">
 						<h3><span>Jakarta</span></h3>
 					</div>
 				</a>
 			</div>
 			<div class="col-md-4">
-				<a href="<?php echo base_url() ?>Main_Front_User/kos_yogyakarta" class="search-place img" style="background-image: url(asset/images/yogyakarta.jpg);">
+				<a href="<?php echo base_url() ?>Main_Back_User/kos_yogyakarta" class="search-place img" style="background-image: url(asset/images/yogyakarta.jpg);">
 					<div class="desc">
 						<h3><span>Yogyakarta</span></h3>
 					</div>
 				</a>
 			</div>
 			<div class="col-md-4">
-				<a href="<?php echo base_url() ?>Main_Front_User/kos_surabaya" class="search-place img" style="background-image: url(asset/images/surabaya.jpg);">
+				<a href="<?php echo base_url() ?>Main_Back_User/kos_surabaya" class="search-place img" style="background-image: url(asset/images/surabaya.jpg);">
 					<div class="desc">
 						<h3><span>Surabaya</span></h3>
 					</div>
