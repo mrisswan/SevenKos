@@ -40,6 +40,14 @@
         </div>
       </div>
     </div>
+    <br>
+    <?php if ($this->session->userdata('username')) { ?>
+
+      <a href=" <?= base_url('transaksi/sewa/tambah_sewa/' . $id_kos); ?> " class="btn btn-success btn-lg">Sewa</a>
+
+    <?php } else { ?>
+      <a href=" <?= base_url('transaksi/sewa/tambah_sewa/' . $id_kos); ?> " class="btn btn-success btn-lg">Sewa</a>
+    <?php } ?>
     <div class="row">
       <div class="col-md-12 pills">
         <div class="bd-example bd-example-tabs">
