@@ -5,18 +5,12 @@
   <title>SevenKos | Solusi cari kost!</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
   <link rel="stylesheet" href="../asset/css/animate.css">
-
   <link rel="stylesheet" href="../asset/css/owl.carousel.min.css">
   <link rel="stylesheet" href="../asset/css/owl.theme.default.min.css">
   <link rel="stylesheet" href="../asset/css/magnific-popup.css">
-
-
   <link rel="stylesheet" href="../asset/css/flaticon.css">
   <link rel="stylesheet" href="../asset/css/style.css">
 </head>
@@ -45,12 +39,8 @@
       </div>
 
       <div class="container justify-content-center">
-
         <div class="row">
-
           <div class="col-md-12">
-
-
             <?php echo form_open('Main_Back_User/search') ?>
             <div class="input-group mb-3">
               <input type="text" class="form-control input-text" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2" name="keyword">
@@ -59,13 +49,8 @@
               </div>
             </div>
             <?php echo form_close() ?>
-
-
           </div>
-
         </div>
-
-
       </div>
 
       <br><br>

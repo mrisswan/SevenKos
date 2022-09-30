@@ -70,9 +70,6 @@
                                             <?php } else { ?>
                                                 <a href=" <?= base_url('transaksi/sewa/tambah_sewa/' . $rm->id_rumah); ?> " class="btn btn-warning  ml-1 ">Sewa</a>
                                             <?php } ?>
-
-
-
                                         </div>
                                     </div>
                                 </div>

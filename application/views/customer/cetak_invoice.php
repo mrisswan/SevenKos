@@ -26,7 +26,7 @@
         <hr>
         <tr>
             <td>Nama</td>
-            <td>:</td> 
+            <td>:</td>
             <td> <?= $dt->nama ?> </td>
         </tr>
         <tr>
@@ -61,41 +61,42 @@
             <td> <?= $dt->tanggal_selesai ?> </td>
         </tr>
         <tr>
-                                <?php
-                                $mulai = strtotime($dt->tgl_sewa);
-                                $selesai = strtotime($dt->tanggal_selesai);
-                                $jmlh = abs(($mulai - $selesai) / (60 * 60 * 1 * 365));
-                                // $mulai      = date_create($dt->tgl_sewa);
-                                // $selesai    =  date_create($dt->tanggal_selesai);
-                                // $jmlh       = date_diff($mulai, $selesai);
-                                // $jmlh->y;
-                                // $jmlh->m:
-                                ?>
+            <?php
+            $mulai = strtotime($dt->tgl_sewa);
+            $selesai = strtotime($dt->tanggal_selesai);
+            $jmlh = abs(($mulai - $selesai) / (60 * 60 * 1 * 365));
+            // $mulai      = date_create($dt->tgl_sewa);
+            // $selesai    =  date_create($dt->tanggal_selesai);
+            // $jmlh       = date_diff($mulai, $selesai);
+            // $jmlh->y;
+            // $jmlh->m:
+            ?>
 
-                                <td>Lama Sewa </td>
-                                <td>:</td>
-                                <td> <?php if (abs(($mulai - $selesai) / (60 * 60 * 24 * 365)) == !',') {
-                                            echo  $jmlh .   ' Bulan' ?>
-                                    <?php } else {
-                                            $mulai = strtotime($dt->tgl_sewa);
-                                            $selesai = strtotime($dt->tanggal_selesai);
-                                            $jmlh = abs(($mulai - $selesai) / (60 * 60 * 24 * 30));
+            <td>Lama Sewa </td>
+            <td>:</td>
+            <td> <?php if (abs(($mulai - $selesai) / (60 * 60 * 24 * 365)) == !',') {
+                        echo  $jmlh .   ' Bulan' ?>
+                <?php } else {
+                        $mulai = strtotime($dt->tgl_sewa);
+                        $selesai = strtotime($dt->tanggal_selesai);
+                        $jmlh = abs(($mulai - $selesai) / (60 * 60 * 24 * 30));
 
-                                            echo $jmlh . ' bulan'
+                        echo $jmlh . ' bulan'
 
-                                    ?>
+                ?>
 
-                                    <?php } ?>
-                                </td>
+                <?php } ?>
+            </td>
 
-                            </tr>
-                            <tr>
-                                <td>Jumlah Pembayaran </td>
-                                <td>:</td>
-                                <td>
-                                    <?php if ($jmlh == 'tahun') {
-                                    ?>
-                    <button style="color: royalblue;"> Rp. <?= number_format($dt->harga * $jmlh, 0, ',', '.')  ?> </button></td>
+        </tr>
+        <tr>
+            <td>Jumlah Pembayaran </td>
+            <td>:</td>
+            <td>
+                <?php if ($jmlh == 'tahun') {
+                ?>
+                    <button style="color: royalblue;"> Rp. <?= number_format($dt->harga * $jmlh, 0, ',', '.')  ?> </button>
+            </td>
         <?php } else { ?>
             <button style="color: royalblue;"> Rp. <?= number_format(($dt->harga / 12) * $jmlh, 0, ',', '.')  ?> </button></td>
         <?php } ?>

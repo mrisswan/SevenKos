@@ -605,7 +605,6 @@ class Dashboard_Admin extends CI_Controller
 		if (!$sudah_login) { // jika $sudah_login == false atau belum login maka akan kembali ke redirect yang di tuju
 			redirect(base_url('Login'));
 		} else {
-
 			$this->load->view('admin/header', $data);
 			$this->load->view('menu_admin');
 			$this->load->view('admin/footer');

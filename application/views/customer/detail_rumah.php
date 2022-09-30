@@ -41,7 +41,6 @@
                                                 echo "<span class='badge badge-danger p-1'> Tidak tersedia </span>";
                                             }
                                             ?>
-
                                     </td>
                                 </tr>
                                 <tr>

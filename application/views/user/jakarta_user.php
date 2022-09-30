@@ -45,12 +45,8 @@
       </div>
 
       <div class="container justify-content-center">
-
         <div class="row">
-
           <div class="col-md-12">
-
-
             <?php echo form_open('Main_Back_User/search') ?>
             <div class="input-group mb-3">
               <input type="text" class="form-control input-text" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2" name="keyword">
@@ -59,13 +55,8 @@
               </div>
             </div>
             <?php echo form_close() ?>
-
-
           </div>
-
         </div>
-
-
       </div>
 
       <br><br>

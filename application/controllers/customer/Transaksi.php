@@ -12,7 +12,6 @@ class Transaksi extends CI_Controller
                 <span aria-hidden="true">&times;</span>
                 <span class="sr-only">Close</span>
             </button>
-
         </div> ');
             redirect('auth/login');
         }

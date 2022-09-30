@@ -63,7 +63,6 @@
                         <td> <button type="submit" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal"> Batal Transaksi </button> </td>
                       <?php } ?>
 
-
                       </tr>
                     </table>
                   </div>

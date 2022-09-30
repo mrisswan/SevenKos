@@ -37,9 +37,6 @@
 </style>
 
 <body>
-
-
-
     <h3> Laporan data transaksi</h3>
     <h4>SI KOS</h4>
     <hr>

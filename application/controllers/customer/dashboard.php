@@ -8,7 +8,6 @@ class Dashboard extends CI_Controller
     {
         $data['rumah'] = $this->kpr_model->get_data('rumah')->result();
 
-
         $this->load->view('templates_customer/header');
         $this->load->view('customer/dashboardCs', $data);
         $this->load->view('templates_customer/footer');

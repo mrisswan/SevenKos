@@ -7,13 +7,13 @@ class Transaksi extends CI_Controller
     {
         $data['transaksi'] = $this->db->query(" SELECT * FROM transaksi tr, tbl_kos kos, tb_user user WHERE tr.id_kos=kos.id_kos AND tr.id_user=user.id_user AND user.id_user")->result();
         $data['jk'] = $this->session->userdata('jk');
-	    $data['id_role'] = $this->session->userdata('id_role');
-	    $data['username'] = $this->session->userdata('username');
-	    $data['email'] = $this->session->userdata('email');
-	    $data['id_user'] = $this->session->userdata('id_user');
-	    $data['fullname'] = strtoupper($this->session->userdata('fullname'));
-        $this->load->view('admin/header',$data);
-        
+        $data['id_role'] = $this->session->userdata('id_role');
+        $data['username'] = $this->session->userdata('username');
+        $data['email'] = $this->session->userdata('email');
+        $data['id_user'] = $this->session->userdata('id_user');
+        $data['fullname'] = strtoupper($this->session->userdata('fullname'));
+        $this->load->view('admin/header', $data);
+
         $this->load->view('admin/data_transaksi', $data);
     }
     public function cek_pembayaran($id)
@@ -21,13 +21,13 @@ class Transaksi extends CI_Controller
         $where = array('id_booking' => $id);
         $data['pembayaran'] = $this->db->query("SELECT * FROM transaksi WHERE id_booking='$id'")->result();
         $data['jk'] = $this->session->userdata('jk');
-	    $data['id_role'] = $this->session->userdata('id_role');
-	    $data['username'] = $this->session->userdata('username');
-	    $data['email'] = $this->session->userdata('email');
-	    $data['id_user'] = $this->session->userdata('id_user');
-	    $data['fullname'] = strtoupper($this->session->userdata('fullname'));
-        $this->load->view('admin/header',$data);
-        
+        $data['id_role'] = $this->session->userdata('id_role');
+        $data['username'] = $this->session->userdata('username');
+        $data['email'] = $this->session->userdata('email');
+        $data['id_user'] = $this->session->userdata('id_user');
+        $data['fullname'] = strtoupper($this->session->userdata('fullname'));
+        $this->load->view('admin/header', $data);
+
         $this->load->view('admin/konfirmasi_pembayaran', $data);
     }
     public function dl_pembayaran()
@@ -56,7 +56,7 @@ class Transaksi extends CI_Controller
     //         force_download($file, null);
     //     }else{
     //         echo 'File tidak ditemukan';
-        
+
     //     }
     // }
 

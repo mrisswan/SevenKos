@@ -19,9 +19,6 @@
 
     <link rel="stylesheet" href="<?= base_url('assets/assets_shop') ?>/css/jquery.fancybox.min.css">
 
-
-
-
     <link href="<?= base_url('assets/assets_admin') ?>/js/dist/sweetalert2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets/assets_shop') ?>/css/aos.css">
 
@@ -32,16 +29,9 @@
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
     <div class="site-wrap">
-
-
         <header class="site-navbar py-4 bg-white js-sticky-header site-navbar-target" role="banner">
-
             <div class="container">
                 <div class="row align-items-center">
-
-
-
-
                     <div class="col-6 col-xl-2">
                         <h1 class="mb-0 "><a href="index.html" class="text-black mb-0">DevSec<span class="text-info"></span> </a></h1>
                     </div>
@@ -66,7 +56,6 @@
                                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="fas fa-sign-out-alt"></i>
                                         <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $this->session->userdata('nama') ?></span>
-
                                     </a>
                                     <!-- Dropdown - User Information -->
                                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -75,8 +64,6 @@
                                             <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                             Ganti password
                                         </a>
-
-
                                     </div>
                                 </li>
 
@@ -84,7 +71,6 @@
                         </nav>
                     </div>
                 </div>
-
             </div>
     </div>
 

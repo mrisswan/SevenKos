@@ -30,9 +30,6 @@
             </div>
         </div>
         <div class="row">
-
-
-
             <?php foreach ($produk as $rm) : ?>
                 <div class="col-lg-4  mb-5">
                     <div class="card border-info shadow  h-300">
@@ -73,9 +70,6 @@
                                             <?php } else { ?>
                                                 <a href=" <?= base_url('transaksi/sewa/tambah_sewa/' . $rm->id_rumah); ?> " class="btn btn-warning  ml-1 disabled ">Sewa</a>
                                             <?php } ?>
-
-
-
                                         </div>
                                     </div>
                                 </div>

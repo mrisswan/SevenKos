@@ -50,5 +50,3 @@ class Model_request extends CI_Model{
         return $this->db->get()->result();
     }
 }
-
-?>

@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-        <table>
-            <tr>
-                <th>NO</th>
-                <th>Nama Depan</th>
-                <th>Nama Belakang</th>
-                <th>Info Hubungin</th>
-                <th>No HP</th>
-                <th>Tipe Kost</th>
-                <th>Nama Properti</th>
-                <th>URL Properti</th>
-                <th>Harga</th>
-                <th>Provinsi</th>
-                <th>Kabupaten/Kota</th>
-                <th>Kecamatan</th>
-                <th>Kelurahan</th>
-                <th>Alamat</th>
-                <th>Jumlah Kamar</th>
-            </tr>
-            <?php 
-            $no = 1;
-            foreach ($request as $rqst) : ?>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>NO</th>
+            <th>Nama Depan</th>
+            <th>Nama Belakang</th>
+            <th>Info Hubungin</th>
+            <th>No HP</th>
+            <th>Tipe Kost</th>
+            <th>Nama Properti</th>
+            <th>URL Properti</th>
+            <th>Harga</th>
+            <th>Provinsi</th>
+            <th>Kabupaten/Kota</th>
+            <th>Kecamatan</th>
+            <th>Kelurahan</th>
+            <th>Alamat</th>
+            <th>Jumlah Kamar</th>
+        </tr>
+        <?php
+        $no = 1;
+        foreach ($request as $rqst) : ?>
             <tr>
                 <td><?php echo $no++ ?></td>
                 <td><?php echo $rqst->nama_depan ?></td>
@@ -42,10 +44,11 @@
                 <td><?php echo $rqst->alamat ?></td>
                 <td><?php echo $rqst->jumlah_kamar ?></td>
             </tr>
-            <?php endforeach; ?> 
-        </table>
-        <script type="text/javascript">
-            window.print();
-        </script>
-    </body>
+        <?php endforeach; ?>
+    </table>
+    <script type="text/javascript">
+        window.print();
+    </script>
+</body>
+
 </html>

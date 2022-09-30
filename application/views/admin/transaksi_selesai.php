@@ -7,11 +7,7 @@
                 </div>
 
                 <div class="card-body my-3">
-
-
                     <form action="<?= base_url('admin/transaksi/transaksi_selesai_aksi') ?>" method="POST">
-
-
                         <?php foreach ($transaksi as $tr) : ?>
                             <input type="hidden" name="id_booking" value="<?= $tr->id_booking ?>">
 
@@ -42,13 +38,11 @@
                                 </select>
 
                             </div>
-
                             <button type="submit" class="btn btn-primary">Submit</button>
                         <?php endforeach ?>
                     </form>
                 </div>
             </div>
         </div>
-
     </div>
 </div>

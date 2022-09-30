@@ -12,7 +12,6 @@ class Sewa extends CI_Controller
         $this->load->model('Kpr_model');
         $data['detail'] = $this->Kpr_model->detail($id);
 
-
         $this->load->view('navbar_user');
         $this->load->view('transaksi/tambah_sewa', $data);
         $this->load->view('footer');
